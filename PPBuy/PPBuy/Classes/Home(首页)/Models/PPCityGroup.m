@@ -1,15 +1,13 @@
 //
-//  PPHomeTopItem.h
+//  PPCityGroup.m
 //  PPBuy
 //
 //  Created by jiaguanglei on 15/10/10.
 //  Copyright (c) 2015年 roseonly. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PPCityGroup.h"
 
-@interface PPHomeTopItem : UIView
-
-+ (instancetype)item;
+@implementation PPCityGroup
 
 @end

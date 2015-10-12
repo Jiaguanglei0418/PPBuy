@@ -10,8 +10,19 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PPHomeTopItem.h"
 
+#import "PPHomeCategoryController.h"
+#import "PPHomeDistrictViewController.h"
 
 @interface PPHomeViewController ()
+// 分类item
+@property (nonatomic, weak) UIBarButtonItem *categoryItem;
+
+// 区域item
+@property (nonatomic, weak) UIBarButtonItem *districtItem;
+
+// 排序item
+@property (nonatomic, weak) UIBarButtonItem *sortItem;
+
 
 @end
 
@@ -28,6 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     return [self initWithCollectionViewLayout:layout];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,28 +58,74 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
+
 /**
  *  设置导航栏内容
  */
 - (void)setupLeftNav
 {
     // 1. logo
-    UIBarButtonItem *logo = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStylePlain target:nil action:nil];
-    logo.enabled = NO;
+    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    logoItem.enabled = NO;
     
     // 2. 类别
-    PPHomeTopItem *categoryItem = [PPHomeTopItem item];
-    UIBarButtonItem *category = [[UIBarButtonItem alloc] initWithCustomView:categoryItem];
+    PPHomeTopItem *category = [PPHomeTopItem item];
+    // 添加监听点击
+    [category addTarget:self action:@selector(categoryItemClicked)];
+
+    UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:category];
+    self.categoryItem = categoryItem;
     
     // 3. 地区
-    PPHomeTopItem *districtItem = [PPHomeTopItem item];
-    UIBarButtonItem *district = [[UIBarButtonItem alloc] initWithCustomView:districtItem];
+    PPHomeTopItem *district = [PPHomeTopItem item];
+    // 添加监听点击
+    [district addTarget:self action:@selector(districtItemClicked)];
+    
+    UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:district];
+    self.districtItem = districtItem;
     
     // 4. 排序
-    PPHomeTopItem *sortItem = [PPHomeTopItem item];
-    UIBarButtonItem *sort = [[UIBarButtonItem alloc] initWithCustomView:sortItem];
+    PPHomeTopItem *sort = [PPHomeTopItem item];
+    // 添加监听点击
+    [sort addTarget:self action:@selector(sortItemClicked)];
     
-    self.navigationItem.leftBarButtonItems = @[logo, category, district, sort];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sort];
+    self.sortItem = sortItem;
+    
+    
+    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
+}
+
+
+#pragma mark - 顶部item点击方法
+// 分类
+- (void)categoryItemClicked
+{
+    // 显示分类菜单
+    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeCategoryController alloc] init]];
+    
+    [popoverVc presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+
+// 地区
+- (void)districtItemClicked
+{
+    LogPurple(@"%s",__func__);
+    // 显示地区菜单
+    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeDistrictViewController alloc] init]];
+    
+    [popoverVc presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+// 排序
+- (void)sortItemClicked
+{
+    LogPurple(@"%s",__func__);
+    PPHomeCategoryController *sortVc = [[PPHomeCategoryController alloc] init];
+    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:sortVc];
+    
+    [popoverVc presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 
@@ -84,10 +142,14 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationItem.rightBarButtonItems = @[mapItem, gapItem, searchItem];
 }
 
+
 - (void)itemMethod:(UIBarButtonItem *)item
 {
     LogRed(@"%s",__func__);
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
