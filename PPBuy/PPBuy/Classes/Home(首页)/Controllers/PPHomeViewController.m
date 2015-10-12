@@ -31,8 +31,7 @@
 static NSString * const reuseIdentifier = @"Cell";
 
 /**
- *  将初始化, 封装在内部. (collectionViewController 需要制定layout布局)
- *
+ *  将初始化, 封装在内部. (collectionViewController 需要制定layout布局
  */
 - (instancetype)init
 {
@@ -51,6 +50,9 @@ static NSString * const reuseIdentifier = @"Cell";
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+    // 注册通知, 监听切换城市
+    [PPNOTICEFICATION addObserver:self selector:@selector(changeCity:) name:PPHomeCitySearchVcCitySelectedNoticefication object:nil];
+    
     // 设置导航栏内容
     [self setupLeftNav];
     
@@ -58,6 +60,29 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
+- (void)dealloc
+{
+    [PPNOTICEFICATION removeObserver:self];
+}
+
+
+/**
+ *  监听通知
+ */
+- (void)changeCity:(NSNotification *)noticefication
+{
+    NSString *cityName = noticefication.userInfo[PPHomeCitySearchVcSelectedCityName];
+    
+    // 1. 该表标题名称
+    PPHomeTopItem *topItem = (PPHomeTopItem *)self.districtItem.customView;
+    [topItem setTitle:[NSString stringWithFormat:@"%@ - 全部", cityName]];
+    [topItem setSubTitle:nil];
+    
+    // 2. 刷新表格数据
+#warning todo
+   
+    
+}
 
 /**
  *  设置导航栏内容
@@ -111,7 +136,9 @@ static NSString * const reuseIdentifier = @"Cell";
 // 地区
 - (void)districtItemClicked
 {
-    LogPurple(@"%s",__func__);
+    // 设置显示区域
+    
+    
     // 显示地区菜单
     UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeDistrictViewController alloc] init]];
     

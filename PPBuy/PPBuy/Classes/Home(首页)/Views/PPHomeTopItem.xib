@@ -22,7 +22,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Fb3-lJ-oY7"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -64,6 +64,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="IconBtn" destination="khP-xv-zdk" id="buD-rD-ctH"/>
+                <outlet property="subTitleLabel" destination="EhF-uB-YTf" id="D3P-74-fOQ"/>
+                <outlet property="titleLabel" destination="KYk-Hb-gMJ" id="ame-ej-QeH"/>
             </connections>
         </view>
     </objects>

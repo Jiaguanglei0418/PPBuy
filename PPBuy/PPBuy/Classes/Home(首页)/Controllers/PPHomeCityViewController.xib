@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PPHomeCityViewController">
             <connections>
+                <outlet property="coverBtn" destination="zpb-Tx-Ehj" id="2qi-a0-uKv"/>
+                <outlet property="searchBar" destination="23j-mN-f3f" id="PyT-eo-CgR"/>
                 <outlet property="tableView" destination="HF7-JG-Ipu" id="Afn-2B-2W8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,15 +35,29 @@
                         <outlet property="delegate" destination="-1" id="ecl-Vn-xUO"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpb-Tx-Ehj" userLabel="遮盖">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="coverBtnClicked" destination="-1" eventType="touchUpInside" id="lLE-ZC-p0X"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="HF7-JG-Ipu" secondAttribute="trailing" id="6pg-o1-fxI"/>
                 <constraint firstItem="23j-mN-f3f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="C2o-oZ-BXe"/>
                 <constraint firstItem="HF7-JG-Ipu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lds-2a-zIT"/>
+                <constraint firstAttribute="trailing" secondItem="zpb-Tx-Ehj" secondAttribute="trailing" id="UV1-JA-1mn"/>
                 <constraint firstAttribute="trailing" secondItem="23j-mN-f3f" secondAttribute="trailing" constant="15" id="W8p-Jm-1xi"/>
                 <constraint firstItem="23j-mN-f3f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Wa7-IS-xH6"/>
+                <constraint firstItem="zpb-Tx-Ehj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iGW-0u-xKP"/>
                 <constraint firstItem="HF7-JG-Ipu" firstAttribute="top" secondItem="23j-mN-f3f" secondAttribute="bottom" id="lOE-CU-NrG"/>
+                <constraint firstAttribute="bottom" secondItem="zpb-Tx-Ehj" secondAttribute="bottom" id="qFB-zQ-Bsb"/>
+                <constraint firstItem="zpb-Tx-Ehj" firstAttribute="top" secondItem="23j-mN-f3f" secondAttribute="bottom" id="uyB-mC-DXs"/>
                 <constraint firstAttribute="bottom" secondItem="HF7-JG-Ipu" secondAttribute="bottom" id="w03-e4-q37"/>
             </constraints>
         </view>

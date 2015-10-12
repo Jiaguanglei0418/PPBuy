@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 /**
  *  1. RGB背景色
  */
@@ -6,11 +8,17 @@
 #define PPCOLOR_BG [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
 
 
+// 监听选中城市 通知
+extern NSString *const PPHomeCitySearchVcCitySelectedNoticefication;
+
+// 选中城市
+extern NSString *const PPHomeCitySearchVcSelectedCityName;
 
 
-
-
-
+/**
+ *  2.通知
+ */
+#define PPNOTICEFICATION [NSNotificationCenter defaultCenter]
 
 
 

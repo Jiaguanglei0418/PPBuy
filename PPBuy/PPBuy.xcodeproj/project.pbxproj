@@ -21,6 +21,8 @@
 		92C256381BCB540900D241FE /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2562B1BCB540900D241FE /* NSObject+MJKeyValue.m */; };
 		92C256391BCB540900D241FE /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2562D1BCB540900D241FE /* NSObject+MJProperty.m */; };
 		92C2563A1BCB540900D241FE /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2562F1BCB540900D241FE /* NSString+MJExtension.m */; };
+		92C2563D1BCB667700D241FE /* PPHomeCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */; };
+		92C256401BCBB42100D241FE /* PPMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2563F1BCBB42100D241FE /* PPMetaTool.m */; };
 		92DD02C61BC7A2010052E8A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DD02C51BC7A2010052E8A4 /* Images.xcassets */; };
 		92DD02D51BC7A2010052E8A4 /* PPBuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD02D41BC7A2010052E8A4 /* PPBuyTests.m */; };
 		92DD03A21BC8B5DF0052E8A4 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */; };
@@ -108,6 +110,10 @@
 		92C2562D1BCB540900D241FE /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		92C2562E1BCB540900D241FE /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		92C2562F1BCB540900D241FE /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		92C2563B1BCB667700D241FE /* PPHomeCitySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeCitySearchViewController.h; sourceTree = "<group>"; };
+		92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeCitySearchViewController.m; sourceTree = "<group>"; };
+		92C2563E1BCBB42100D241FE /* PPMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMetaTool.h; sourceTree = "<group>"; };
+		92C2563F1BCBB42100D241FE /* PPMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMetaTool.m; sourceTree = "<group>"; };
 		92DD02B51BC7A2010052E8A4 /* PPBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD02B91BC7A2010052E8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92DD02C51BC7A2010052E8A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -348,6 +354,8 @@
 				92DD047B1BC907A30052E8A4 /* PPHomeCityViewController.h */,
 				92DD047C1BC907A30052E8A4 /* PPHomeCityViewController.m */,
 				92DD047D1BC907A30052E8A4 /* PPHomeCityViewController.xib */,
+				92C2563B1BCB667700D241FE /* PPHomeCitySearchViewController.h */,
+				92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -413,6 +421,8 @@
 			children = (
 				92DD037D1BC8B5DF0052E8A4 /* PPConst.h */,
 				92DD037E1BC8B5DF0052E8A4 /* PPConst.m */,
+				92C2563E1BCBB42100D241FE /* PPMetaTool.h */,
+				92C2563F1BCBB42100D241FE /* PPMetaTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -734,12 +744,14 @@
 				92DD04611BC8DEF00052E8A4 /* MASCompositeConstraint.m in Sources */,
 				92DD04631BC8DEF00052E8A4 /* MASConstraintMaker.m in Sources */,
 				92DD04831BC919B80052E8A4 /* PPCity.m in Sources */,
+				92C2563D1BCB667700D241FE /* PPHomeCitySearchViewController.m in Sources */,
 				92DD03AF1BC8B5DF0052E8A4 /* UIView+Extension.m in Sources */,
 				92DD046A1BC8DEF00052E8A4 /* ViewController+MASAdditions.m in Sources */,
 				92C256371BCB540900D241FE /* NSObject+MJCoding.m in Sources */,
 				92DD04641BC8DEF00052E8A4 /* MASLayoutConstraint.m in Sources */,
 				92DD03AD1BC8B5DF0052E8A4 /* UIImage+JGL.m in Sources */,
 				92DD04861BC91A5D0052E8A4 /* PPRegion.m in Sources */,
+				92C256401BCBB42100D241FE /* PPMetaTool.m in Sources */,
 				92C256361BCB540900D241FE /* NSObject+MJClass.m in Sources */,
 				92DD03AA1BC8B5DF0052E8A4 /* NSString+Emoji.m in Sources */,
 				92DD03C51BC8C3470052E8A4 /* PPCategory.m in Sources */,
