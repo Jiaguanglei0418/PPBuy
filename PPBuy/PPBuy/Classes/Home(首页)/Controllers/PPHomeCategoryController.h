@@ -8,7 +8,13 @@
 //  ---  分类控制器, 显示分类列表
 
 #import <UIKit/UIKit.h>
+@class PPCategory;
+
+typedef void (^PPCategoryBlock) (PPCategory * category);
 
 @interface PPHomeCategoryController : UIViewController
+
+ /**  block 给HomeVc 传值 ***/
+@property (nonatomic, copy) PPCategoryBlock block;
 
 @end

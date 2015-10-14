@@ -10,9 +10,27 @@
 
 // 监听选中城市 通知
 extern NSString *const PPHomeCitySearchVcCitySelectedNoticefication;
-
-// 选中城市
 extern NSString *const PPHomeCitySearchVcSelectedCityName;
+
+
+// 监听选中排序 通知
+extern NSString *const PPHomeSortVcNoticefication;
+extern NSString *const PPHomeSortSelectedSort;
+
+
+// 监听修改分类 通知 -- dropdown cell
+extern NSString *const PPHomeCategoryVcCategorySelectedNoticefication;
+extern NSString *const PPHomeCategorySelectedCategory;
+extern NSString *const PPHomeCategorySelectedSubCategoryName;
+
+
+// 监听修改区域 通知
+extern NSString *const PPHomeRegionVcRegionSelectedNoticefication;
+extern NSString *const PPHomeRegionSelectedRegion;
+extern NSString *const PPHomeRegionSelectedSubRegionName;
+
+
+
 
 
 /**

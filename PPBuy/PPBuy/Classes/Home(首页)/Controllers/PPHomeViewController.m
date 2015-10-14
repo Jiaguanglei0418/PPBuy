@@ -11,19 +11,37 @@
 #import "PPHomeTopItem.h"
 
 #import "PPHomeCategoryController.h"
-#import "PPHomeDistrictViewController.h"
+#import "PPHomeRegionViewController.h"
+#import "PPHomeSortViewController.h"
+
+#import "PPMetaTool.h"
+#import "PPCity.h"
+#import "PPSort.h"
+#import "PPCategory.h"
+#import "PPRegion.h"
 
 @interface PPHomeViewController ()
 // 分类item
 @property (nonatomic, weak) UIBarButtonItem *categoryItem;
 
 // 区域item
-@property (nonatomic, weak) UIBarButtonItem *districtItem;
+@property (nonatomic, weak) UIBarButtonItem *regionItem;
 
 // 排序item
 @property (nonatomic, weak) UIBarButtonItem *sortItem;
 
+// 当前选中城市名称
+@property (nonatomic, copy) NSString *selectedCityName;
 
+ /**  popoverVc ***/
+@property (nonatomic, strong) UIPopoverController *sortPopVc;
+@property (nonatomic, strong) UIPopoverController *categoryPopVc;
+@property (nonatomic, strong) UIPopoverController *regionPopVc;
+
+ /**  PPTopItem ***/
+//@property (nonatomic, strong) PPHomeTopItem *sort;
+//@property (nonatomic, strong) PPHomeTopItem *category;
+//@property (nonatomic, strong) PPHomeTopItem *region;
 @end
 
 @implementation PPHomeViewController
@@ -52,6 +70,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 注册通知, 监听切换城市
     [PPNOTICEFICATION addObserver:self selector:@selector(changeCity:) name:PPHomeCitySearchVcCitySelectedNoticefication object:nil];
+    // 监听排序
+    [PPNOTICEFICATION addObserver:self selector:@selector(changeSort:) name:PPHomeSortVcNoticefication object:nil];
+    // 监听分类改变
+    [PPNOTICEFICATION addObserver:self selector:@selector(changeCategory:) name:PPHomeCategoryVcCategorySelectedNoticefication object:nil];
+    // 监听地区改变
+    [PPNOTICEFICATION addObserver:self selector:@selector(changeRegion:) name:PPHomeRegionVcRegionSelectedNoticefication object:nil];
     
     // 设置导航栏内容
     [self setupLeftNav];
@@ -65,24 +89,89 @@ static NSString * const reuseIdentifier = @"Cell";
     [PPNOTICEFICATION removeObserver:self];
 }
 
+/**
+ *  监听通知 - 改变区域
+ */
+- (void)changeRegion:(NSNotification *)noticefication
+{
+    PPRegion *region = noticefication.userInfo[PPHomeRegionSelectedRegion];
+    NSString *subRegionname = noticefication.userInfo[PPHomeRegionSelectedSubRegionName];
+    
+    // 1. 显示标题名称
+    PPHomeTopItem *topItem = (PPHomeTopItem *)self.regionItem.customView;
+    
+    [topItem setTitle:region.name];
+    [topItem setSubTitle:subRegionname ? subRegionname : @"全部"];
+    
+    // 2. 关闭popover
+    [self.regionPopVc dismissPopoverAnimated:YES];
+    
+    // 3. 刷新表格
+#warning todo
+    
+    
+}
+
 
 /**
- *  监听通知
+ *  监听通知 - 改变分类
+ */
+- (void)changeCategory:(NSNotification *)noticefication
+{
+    PPCategory *category = noticefication.userInfo[PPHomeCategorySelectedCategory];
+    NSString *subCategoryname = noticefication.userInfo[PPHomeCategorySelectedSubCategoryName];
+    
+    // 1. 显示标题名称
+    PPHomeTopItem *topItem = (PPHomeTopItem *)self.categoryItem.customView;
+    [topItem setIcon:category.icon highIcon:category.highlighted_icon];
+    [topItem setTitle:category.name];
+    [topItem setSubTitle:subCategoryname ? subCategoryname : @"全部"];
+    
+    // 2. 关闭popover
+    [self.categoryPopVc dismissPopoverAnimated:YES];
+    
+    // 3. 刷新表格
+#warning todo
+    
+}
+
+/**
+ *  监听通知 - 改变城市
  */
 - (void)changeCity:(NSNotification *)noticefication
 {
-    NSString *cityName = noticefication.userInfo[PPHomeCitySearchVcSelectedCityName];
+    self.selectedCityName = noticefication.userInfo[PPHomeCitySearchVcSelectedCityName];
     
     // 1. 该表标题名称
-    PPHomeTopItem *topItem = (PPHomeTopItem *)self.districtItem.customView;
-    [topItem setTitle:[NSString stringWithFormat:@"%@ - 全部", cityName]];
+    PPHomeTopItem *topItem = (PPHomeTopItem *)self.regionItem.customView;
+    [topItem setTitle:[NSString stringWithFormat:@"%@ - 全部", self.selectedCityName]];
     [topItem setSubTitle:nil];
     
     // 2. 刷新表格数据
 #warning todo
-   
+    
     
 }
+
+/**
+ *  监听排序
+ */
+- (void)changeSort:(NSNotification *)noticefication
+{
+//    LogRed(@"%s",__func__);
+    // 1. 显示排序菜单
+    PPSort *sort = noticefication.userInfo[PPHomeSortSelectedSort];
+    PPHomeTopItem *topItem = (PPHomeTopItem *)self.sortItem.customView;
+    topItem.subTitle = sort.label;
+    
+    // 2. 移除popVc
+    [self.sortPopVc dismissPopoverAnimated:YES];
+    
+    // 3. 刷新数据
+    
+    
+}
+
 
 /**
  *  设置导航栏内容
@@ -95,6 +184,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 2. 类别
     PPHomeTopItem *category = [PPHomeTopItem item];
+    [category setIcon:@"icon_category_0" highIcon:@"icon_category_highlighted_0"];
+    [category setTitle:@"分类"];
+    [category setSubTitle:@""];
+    
     // 添加监听点击
     [category addTarget:self action:@selector(categoryItemClicked)];
 
@@ -102,15 +195,22 @@ static NSString * const reuseIdentifier = @"Cell";
     self.categoryItem = categoryItem;
     
     // 3. 地区
-    PPHomeTopItem *district = [PPHomeTopItem item];
+    PPHomeTopItem *region = [PPHomeTopItem item];
+    [region setIcon:@"icon_district" highIcon:@"icon_district_highlighted"];
+    [region setTitle:@"地区"];
+    [region setSubTitle:@""];
     // 添加监听点击
-    [district addTarget:self action:@selector(districtItemClicked)];
+    [region addTarget:self action:@selector(districtItemClicked)];
     
-    UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:district];
-    self.districtItem = districtItem;
+    UIBarButtonItem *regionItem = [[UIBarButtonItem alloc] initWithCustomView:region];
+    
+    self.regionItem = regionItem;
     
     // 4. 排序
     PPHomeTopItem *sort = [PPHomeTopItem item];
+    [sort setIcon:@"icon_sort" highIcon:@"icon_sort_highlighted"];
+    [sort setTitle:@"排序"];
+    [sort setSubTitle:@""];
     // 添加监听点击
     [sort addTarget:self action:@selector(sortItemClicked)];
     
@@ -118,7 +218,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.sortItem = sortItem;
     
     
-    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
+    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, regionItem, sortItem];
 }
 
 
@@ -127,9 +227,10 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)categoryItemClicked
 {
     // 显示分类菜单
-    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeCategoryController alloc] init]];
+    self.categoryPopVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeCategoryController alloc] init]];
     
-    [popoverVc presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [self.categoryPopVc presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
 }
 
 
@@ -137,22 +238,32 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)districtItemClicked
 {
     // 设置显示区域
-    
+    PPHomeRegionViewController *regionVc = [[PPHomeRegionViewController alloc] init];
+
+    if (self.selectedCityName) {
+        // 获取当前选中城市
+        PPCity *city = [[[PPMetaTool cities] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name = %@",self.selectedCityName]] firstObject];
+        
+        regionVc.regions = city.regions;
+        
+    }
     
     // 显示地区菜单
-    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:[[PPHomeDistrictViewController alloc] init]];
+    self.regionPopVc = [[UIPopoverController alloc] initWithContentViewController:regionVc];
     
-    [popoverVc presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [self.regionPopVc presentPopoverFromBarButtonItem:self.regionItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+    // 传值
+    regionVc.popoverVc = self.regionPopVc;
 }
 
 // 排序
 - (void)sortItemClicked
 {
-    LogPurple(@"%s",__func__);
-    PPHomeCategoryController *sortVc = [[PPHomeCategoryController alloc] init];
-    UIPopoverController *popoverVc = [[UIPopoverController alloc] initWithContentViewController:sortVc];
+    PPHomeSortViewController *sortVc = [[PPHomeSortViewController alloc] init];
+    self.sortPopVc = [[UIPopoverController alloc] initWithContentViewController:sortVc];
     
-    [popoverVc presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [self.sortPopVc presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 

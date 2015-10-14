@@ -18,5 +18,16 @@
 + (NSArray *)cities;
 
 
+/**
+ *  返回所有分类数据 
+ *
+ */
++ (NSArray *)categories;
 
+
+/**
+ *  返回所有排序数据
+ *
+ */
++ (NSArray *)sorts;
 @end

@@ -130,7 +130,8 @@ const int PPCoverTag = 999;
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.cityDatas[section] title];
+    PPCityGroup *group = self.cityDatas[section];
+    return group.title;
 }
 
 

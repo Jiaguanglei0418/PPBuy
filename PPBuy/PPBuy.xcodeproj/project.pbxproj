@@ -23,6 +23,9 @@
 		92C2563A1BCB540900D241FE /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2562F1BCB540900D241FE /* NSString+MJExtension.m */; };
 		92C2563D1BCB667700D241FE /* PPHomeCitySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */; };
 		92C256401BCBB42100D241FE /* PPMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2563F1BCBB42100D241FE /* PPMetaTool.m */; };
+		92C256471BCCB5A300D241FE /* PPHomeSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256461BCCB5A300D241FE /* PPHomeSortViewController.m */; };
+		92C2564A1BCCB65400D241FE /* PPSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256491BCCB65400D241FE /* PPSort.m */; };
+		92C2564E1BCCBA5400D241FE /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2564D1BCCBA5400D241FE /* MyButton.m */; };
 		92DD02C61BC7A2010052E8A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DD02C51BC7A2010052E8A4 /* Images.xcassets */; };
 		92DD02D51BC7A2010052E8A4 /* PPBuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD02D41BC7A2010052E8A4 /* PPBuyTests.m */; };
 		92DD03A21BC8B5DF0052E8A4 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */; };
@@ -62,8 +65,8 @@
 		92DD046A1BC8DEF00052E8A4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD045F1BC8DEF00052E8A4 /* ViewController+MASAdditions.m */; };
 		92DD046E1BC8F2800052E8A4 /* PPHomeDropdownMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD046C1BC8F2800052E8A4 /* PPHomeDropdownMainCell.m */; };
 		92DD04721BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD04711BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.m */; };
-		92DD04791BC8FBF50052E8A4 /* PPHomeDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD04771BC8FBF50052E8A4 /* PPHomeDistrictViewController.m */; };
-		92DD047A1BC8FBF50052E8A4 /* PPHomeDistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DD04781BC8FBF50052E8A4 /* PPHomeDistrictViewController.xib */; };
+		92DD04791BC8FBF50052E8A4 /* PPHomeRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD04771BC8FBF50052E8A4 /* PPHomeRegionViewController.m */; };
+		92DD047A1BC8FBF50052E8A4 /* PPHomeRegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DD04781BC8FBF50052E8A4 /* PPHomeRegionViewController.xib */; };
 		92DD047E1BC907A30052E8A4 /* PPHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD047C1BC907A30052E8A4 /* PPHomeCityViewController.m */; };
 		92DD047F1BC907A30052E8A4 /* PPHomeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92DD047D1BC907A30052E8A4 /* PPHomeCityViewController.xib */; };
 		92DD04831BC919B80052E8A4 /* PPCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD04821BC919B80052E8A4 /* PPCity.m */; };
@@ -114,6 +117,12 @@
 		92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeCitySearchViewController.m; sourceTree = "<group>"; };
 		92C2563E1BCBB42100D241FE /* PPMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMetaTool.h; sourceTree = "<group>"; };
 		92C2563F1BCBB42100D241FE /* PPMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMetaTool.m; sourceTree = "<group>"; };
+		92C256451BCCB5A300D241FE /* PPHomeSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeSortViewController.h; sourceTree = "<group>"; };
+		92C256461BCCB5A300D241FE /* PPHomeSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeSortViewController.m; sourceTree = "<group>"; };
+		92C256481BCCB65400D241FE /* PPSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSort.h; sourceTree = "<group>"; };
+		92C256491BCCB65400D241FE /* PPSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSort.m; sourceTree = "<group>"; };
+		92C2564C1BCCBA5400D241FE /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		92C2564D1BCCBA5400D241FE /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		92DD02B51BC7A2010052E8A4 /* PPBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD02B91BC7A2010052E8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92DD02C51BC7A2010052E8A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -191,9 +200,9 @@
 		92DD046C1BC8F2800052E8A4 /* PPHomeDropdownMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeDropdownMainCell.m; sourceTree = "<group>"; };
 		92DD04701BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeDropdownPreCell.h; sourceTree = "<group>"; };
 		92DD04711BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeDropdownPreCell.m; sourceTree = "<group>"; };
-		92DD04761BC8FBF50052E8A4 /* PPHomeDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeDistrictViewController.h; sourceTree = "<group>"; };
-		92DD04771BC8FBF50052E8A4 /* PPHomeDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeDistrictViewController.m; sourceTree = "<group>"; };
-		92DD04781BC8FBF50052E8A4 /* PPHomeDistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPHomeDistrictViewController.xib; sourceTree = "<group>"; };
+		92DD04761BC8FBF50052E8A4 /* PPHomeRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeRegionViewController.h; sourceTree = "<group>"; };
+		92DD04771BC8FBF50052E8A4 /* PPHomeRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeRegionViewController.m; sourceTree = "<group>"; };
+		92DD04781BC8FBF50052E8A4 /* PPHomeRegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPHomeRegionViewController.xib; sourceTree = "<group>"; };
 		92DD047B1BC907A30052E8A4 /* PPHomeCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHomeCityViewController.h; sourceTree = "<group>"; };
 		92DD047C1BC907A30052E8A4 /* PPHomeCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHomeCityViewController.m; sourceTree = "<group>"; };
 		92DD047D1BC907A30052E8A4 /* PPHomeCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPHomeCityViewController.xib; sourceTree = "<group>"; };
@@ -263,6 +272,57 @@
 				92C2562F1BCB540900D241FE /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		92C256411BCCB53900D241FE /* categoty */ = {
+			isa = PBXGroup;
+			children = (
+				92DD03B71BC8BCDA0052E8A4 /* PPHomeCategoryController.h */,
+				92DD03B81BC8BCDA0052E8A4 /* PPHomeCategoryController.m */,
+			);
+			name = categoty;
+			sourceTree = "<group>";
+		};
+		92C256421BCCB55400D241FE /* city */ = {
+			isa = PBXGroup;
+			children = (
+				92DD04761BC8FBF50052E8A4 /* PPHomeRegionViewController.h */,
+				92DD04771BC8FBF50052E8A4 /* PPHomeRegionViewController.m */,
+				92DD04781BC8FBF50052E8A4 /* PPHomeRegionViewController.xib */,
+				92DD047B1BC907A30052E8A4 /* PPHomeCityViewController.h */,
+				92DD047C1BC907A30052E8A4 /* PPHomeCityViewController.m */,
+				92DD047D1BC907A30052E8A4 /* PPHomeCityViewController.xib */,
+				92C2563B1BCB667700D241FE /* PPHomeCitySearchViewController.h */,
+				92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */,
+			);
+			name = city;
+			sourceTree = "<group>";
+		};
+		92C256431BCCB56B00D241FE /* sort */ = {
+			isa = PBXGroup;
+			children = (
+				92C256451BCCB5A300D241FE /* PPHomeSortViewController.h */,
+				92C256461BCCB5A300D241FE /* PPHomeSortViewController.m */,
+			);
+			name = sort;
+			sourceTree = "<group>";
+		};
+		92C256441BCCB58300D241FE /* home */ = {
+			isa = PBXGroup;
+			children = (
+				92DD03701BC8B5DF0052E8A4 /* PPHomeViewController.h */,
+				92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		92C2564B1BCCB9F500D241FE /* UIButton+Extention */ = {
+			isa = PBXGroup;
+			children = (
+				92C2564C1BCCBA5400D241FE /* MyButton.h */,
+				92C2564D1BCCBA5400D241FE /* MyButton.m */,
+			);
+			name = "UIButton+Extention";
 			sourceTree = "<group>";
 		};
 		92DD02AC1BC7A2010052E8A4 = {
@@ -344,18 +404,10 @@
 		92DD036F1BC8B5DF0052E8A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				92DD03701BC8B5DF0052E8A4 /* PPHomeViewController.h */,
-				92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */,
-				92DD03B71BC8BCDA0052E8A4 /* PPHomeCategoryController.h */,
-				92DD03B81BC8BCDA0052E8A4 /* PPHomeCategoryController.m */,
-				92DD04761BC8FBF50052E8A4 /* PPHomeDistrictViewController.h */,
-				92DD04771BC8FBF50052E8A4 /* PPHomeDistrictViewController.m */,
-				92DD04781BC8FBF50052E8A4 /* PPHomeDistrictViewController.xib */,
-				92DD047B1BC907A30052E8A4 /* PPHomeCityViewController.h */,
-				92DD047C1BC907A30052E8A4 /* PPHomeCityViewController.m */,
-				92DD047D1BC907A30052E8A4 /* PPHomeCityViewController.xib */,
-				92C2563B1BCB667700D241FE /* PPHomeCitySearchViewController.h */,
-				92C2563C1BCB667700D241FE /* PPHomeCitySearchViewController.m */,
+				92C256441BCCB58300D241FE /* home */,
+				92C256411BCCB53900D241FE /* categoty */,
+				92C256421BCCB55400D241FE /* city */,
+				92C256431BCCB56B00D241FE /* sort */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -371,6 +423,8 @@
 				92DD04851BC91A5D0052E8A4 /* PPRegion.m */,
 				92DD04871BC91FFE0052E8A4 /* PPCityGroup.h */,
 				92DD04881BC91FFE0052E8A4 /* PPCityGroup.m */,
+				92C256481BCCB65400D241FE /* PPSort.h */,
+				92C256491BCCB65400D241FE /* PPSort.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,6 +534,7 @@
 		92DD03871BC8B5DF0052E8A4 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				92C2564B1BCCB9F500D241FE /* UIButton+Extention */,
 				92DD03881BC8B5DF0052E8A4 /* Foundation+Log.m */,
 				92DD03891BC8B5DF0052E8A4 /* NSDate+Extention */,
 				92DD038C1BC8B5DF0052E8A4 /* NSString+Extention */,
@@ -712,7 +767,7 @@
 				92DD03B61BC8B7030052E8A4 /* PPHomeDropDown.xib in Resources */,
 				92DD03C01BC8C2750052E8A4 /* cities.plist in Resources */,
 				92DD03A41BC8B5DF0052E8A4 /* PPHomeTopItem.xib in Resources */,
-				92DD047A1BC8FBF50052E8A4 /* PPHomeDistrictViewController.xib in Resources */,
+				92DD047A1BC8FBF50052E8A4 /* PPHomeRegionViewController.xib in Resources */,
 				92DD03C11BC8C2750052E8A4 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +790,7 @@
 				92C256341BCB540900D241FE /* MJPropertyKey.m in Sources */,
 				92C256311BCB540900D241FE /* MJExtensionConst.m in Sources */,
 				92DD03A91BC8B5DF0052E8A4 /* NSDate+Extension.m in Sources */,
+				92C256471BCCB5A300D241FE /* PPHomeSortViewController.m in Sources */,
 				92DD03B41BC8B6CE0052E8A4 /* PPHomeDropDown.m in Sources */,
 				92C256351BCB540900D241FE /* MJPropertyType.m in Sources */,
 				92DD047E1BC907A30052E8A4 /* PPHomeCityViewController.m in Sources */,
@@ -749,6 +805,7 @@
 				92DD046A1BC8DEF00052E8A4 /* ViewController+MASAdditions.m in Sources */,
 				92C256371BCB540900D241FE /* NSObject+MJCoding.m in Sources */,
 				92DD04641BC8DEF00052E8A4 /* MASLayoutConstraint.m in Sources */,
+				92C2564A1BCCB65400D241FE /* PPSort.m in Sources */,
 				92DD03AD1BC8B5DF0052E8A4 /* UIImage+JGL.m in Sources */,
 				92DD04861BC91A5D0052E8A4 /* PPRegion.m in Sources */,
 				92C256401BCBB42100D241FE /* PPMetaTool.m in Sources */,
@@ -761,6 +818,7 @@
 				92C255F41BCB531200D241FE /* MBProgressHUD.m in Sources */,
 				92C256381BCB540900D241FE /* NSObject+MJKeyValue.m in Sources */,
 				92DD03B91BC8BCDA0052E8A4 /* PPHomeCategoryController.m in Sources */,
+				92C2564E1BCCBA5400D241FE /* MyButton.m in Sources */,
 				92DD03AC1BC8B5DF0052E8A4 /* UIBarButtonItem+Extension.m in Sources */,
 				92DD03A31BC8B5DF0052E8A4 /* PPHomeTopItem.m in Sources */,
 				92C256321BCB540900D241FE /* MJFoundation.m in Sources */,
@@ -770,7 +828,7 @@
 				92DD03B11BC8B5DF0052E8A4 /* main.m in Sources */,
 				92DD04721BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.m in Sources */,
 				92DD04651BC8DEF00052E8A4 /* MASViewAttribute.m in Sources */,
-				92DD04791BC8FBF50052E8A4 /* PPHomeDistrictViewController.m in Sources */,
+				92DD04791BC8FBF50052E8A4 /* PPHomeRegionViewController.m in Sources */,
 				92DD04621BC8DEF00052E8A4 /* MASConstraint.m in Sources */,
 				92DD03A61BC8B5DF0052E8A4 /* PPConst.m in Sources */,
 				92C255F21BCB531200D241FE /* MBProgressHUD+MJ.m in Sources */,

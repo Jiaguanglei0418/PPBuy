@@ -10,11 +10,13 @@
 #import "PPHomeDropDown.h"
 #import "UIView+Extension.h"
 
+#import "PPMetaTool.h"
 #import "PPCategory.h"
 #import "MJExtension.h"
 #import "Masonry.h"
 
-@interface PPHomeCategoryController ()
+
+@interface PPHomeCategoryController ()<PPHomeDropDownDataSource,PPHomeDropDownDelegate>
 
 @property (nonatomic, strong) NSArray *categoryDatas;
 
@@ -25,12 +27,12 @@
 @implementation PPHomeCategoryController
 
 
-- (NSArray *)categoryDatas{
-    if (!_categoryDatas) {
-        self.categoryDatas = [PPCategory objectArrayWithFilename:@"categories.plist" error:nil];
-    }
-    return _categoryDatas;
-}
+//- (NSArray *)categoryDatas{
+//    if (!_categoryDatas) {
+//        self.categoryDatas = [PPCategory objectArrayWithFilename:@"categories.plist" error:nil];
+//    }
+//    return _categoryDatas;
+//}
 
 
 - (void)loadView
@@ -43,7 +45,8 @@
     //    dropdown.autoresizingMask = UIViewAutoresizingNone;
     
     // 加载数据
-    dropdown.categories = self.categoryDatas;
+    dropdown.dataSource = self;
+    dropdown.delegate = self;
     
     self.view = dropdown;
     
@@ -78,6 +81,67 @@
 //    self.preferredContentSize = dropdown.size;
     
     
+}
+
+
+#pragma mark -PPHomeDropDownDataSource
+- (NSInteger)numberOfRowsInMainTableView:(PPHomeDropDown *)homeDropdown
+{
+    return [PPMetaTool categories].count;
+}
+
+- (NSString *)homeDropdown:(PPHomeDropDown *)homeDropdown titleForRowInMainTableView:(NSInteger)row
+{
+    PPCategory *category = [PPMetaTool categories][row];
+    return category.name;
+}
+
+- (NSString *)homeDropdown:(PPHomeDropDown *)homeDropdown iconForRowInMainTableView:(NSInteger)row
+{
+    PPCategory *category = [PPMetaTool categories][row];
+    return category.small_icon;
+}
+
+- (NSString *)homeDropdown:(PPHomeDropDown *)homeDropdown selectedIconForRowInMainTableView:(NSInteger)row
+{
+    PPCategory *category = [PPMetaTool categories][row];
+    return category.small_highlighted_icon;
+}
+
+- (NSArray *)homeDropdown:(PPHomeDropDown *)homeDropdown subDataForRowInMainTableView:(NSInteger)row
+{
+    PPCategory *category = [PPMetaTool categories][row];
+    return category.subcategories;
+}
+
+
+#pragma mark - PPHomeDropDownDelegate
+- (void)homeDropdown:(PPHomeDropDown *)homeDropdown didSelectedRowInMainTableView:(NSInteger)row
+{
+    PPCategory *category = [PPMetaTool categories][row];
+//    LogYellow(@"%@",category.name);
+    
+    // 发通知
+    if(!category.subcategories.count){
+        [PPNOTICEFICATION postNotificationName:PPHomeCategoryVcCategorySelectedNoticefication object:nil userInfo:@{PPHomeCategorySelectedCategory : category}];
+    }
+}
+
+- (void)homeDropdown:(PPHomeDropDown *)homeDropdown didSelectedRowInSubTableView:(NSInteger)subrow inMainTable:(NSInteger)mainrow
+{
+    // 取出主表模型
+    PPCategory *category = [PPMetaTool categories][mainrow];
+//    LogMagenta(@"%@",category.subcategories[subrow]);
+    
+    // 发通知
+    [PPNOTICEFICATION postNotificationName:PPHomeCategoryVcCategorySelectedNoticefication object:nil userInfo:@{PPHomeCategorySelectedCategory : category, PPHomeCategorySelectedSubCategoryName : category.subcategories[subrow]}];
+    
+}
+
+
+- (void)dealloc
+{
+    [PPNOTICEFICATION removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
