@@ -20,7 +20,8 @@
 #import "PPCategory.h"
 #import "PPRegion.h"
 
-@interface PPHomeViewController ()
+#import "DPAPI.h" // 大众点评
+@interface PPHomeViewController ()<DPRequestDelegate>
 // 分类item
 @property (nonatomic, weak) UIBarButtonItem *categoryItem;
 
@@ -32,6 +33,13 @@
 
 // 当前选中城市名称
 @property (nonatomic, copy) NSString *selectedCityName;
+// 当前选中区域名称
+@property (nonatomic, copy) NSString *selectedRegionName;
+// 当前选中分类名称
+@property (nonatomic, copy) NSString *selectedCategoryName;
+// 当前选中分类名称
+@property (nonatomic, assign) int selectedSortName;
+
 
  /**  popoverVc ***/
 @property (nonatomic, strong) UIPopoverController *sortPopVc;
@@ -89,6 +97,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [PPNOTICEFICATION removeObserver:self];
 }
 
+#pragma mark - 监听通知
 /**
  *  监听通知 - 改变区域
  */
@@ -96,6 +105,17 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     PPRegion *region = noticefication.userInfo[PPHomeRegionSelectedRegion];
     NSString *subRegionname = noticefication.userInfo[PPHomeRegionSelectedSubRegionName];
+    
+    // 设置选中区域
+    if (subRegionname == nil || [subRegionname isEqualToString:@"全部"]) {
+        self.selectedRegionName = region.name;
+    }else{
+        self.selectedRegionName = subRegionname;
+    }
+    
+    if ([self.selectedRegionName isEqualToString:@"全部"]) {
+        self.selectedRegionName = nil;
+    }
     
     // 1. 显示标题名称
     PPHomeTopItem *topItem = (PPHomeTopItem *)self.regionItem.customView;
@@ -108,7 +128,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 3. 刷新表格
 #warning todo
-    
+    [self loadNewDeals];
     
 }
 
@@ -121,6 +141,18 @@ static NSString * const reuseIdentifier = @"Cell";
     PPCategory *category = noticefication.userInfo[PPHomeCategorySelectedCategory];
     NSString *subCategoryname = noticefication.userInfo[PPHomeCategorySelectedSubCategoryName];
     
+    // 设置选中分类 -- 发送到服务器
+    if(subCategoryname == nil || [subCategoryname isEqualToString:@"全部"]){ // 点击数据没有子类
+        self.selectedCategoryName = category.name;
+    }else{
+        self.selectedCategoryName = subCategoryname;
+    }
+    
+    // 分类为 - 全部分类
+    if ([self.selectedCategoryName isEqualToString:@"全部分类"]) {
+        self.selectedCategoryName = nil;
+    }
+    
     // 1. 显示标题名称
     PPHomeTopItem *topItem = (PPHomeTopItem *)self.categoryItem.customView;
     [topItem setIcon:category.icon highIcon:category.highlighted_icon];
@@ -132,7 +164,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 3. 刷新表格
 #warning todo
-    
+    [self loadNewDeals];
 }
 
 /**
@@ -149,7 +181,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 2. 刷新表格数据
 #warning todo
-    
+    [self loadNewDeals];
     
 }
 
@@ -164,12 +196,54 @@ static NSString * const reuseIdentifier = @"Cell";
     PPHomeTopItem *topItem = (PPHomeTopItem *)self.sortItem.customView;
     topItem.subTitle = sort.label;
     
+    self.selectedSortName = sort.value;
+    
     // 2. 移除popVc
     [self.sortPopVc dismissPopoverAnimated:YES];
     
     // 3. 刷新数据
+    [self loadNewDeals];
+    
+}
+
+#pragma mark - 跟服务器交互
+- (void)loadNewDeals
+{
+    DPAPI *api = [[DPAPI alloc] init];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    // 城市
+    params[@"city"] = self.selectedCityName;
+    // 区域
+    if (self.selectedRegionName) {
+        params[@"region"] = self.selectedRegionName;
+    }
+    // 分类
+    if(self.selectedCategoryName){
+        params[@"category"] = self.selectedCategoryName;
+    }
+    // 排序
+    if (self.selectedSortName) {
+         params[@"sort"] = @(self.selectedSortName);
+    }
+    // 每页条数
+    params[@"limit"] = @(5);
     
     
+    [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+    LogRed(@"%@", params);
+}
+
+
+#pragma mark - DPRequestDelegate
+- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+    LogYellow(@"请求成功 %@", result);
+}
+
+- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    LogGreen(@"失败 %@", error);
 }
 
 

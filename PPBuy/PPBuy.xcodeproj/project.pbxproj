@@ -26,6 +26,8 @@
 		92C256471BCCB5A300D241FE /* PPHomeSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256461BCCB5A300D241FE /* PPHomeSortViewController.m */; };
 		92C2564A1BCCB65400D241FE /* PPSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256491BCCB65400D241FE /* PPSort.m */; };
 		92C2564E1BCCBA5400D241FE /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C2564D1BCCBA5400D241FE /* MyButton.m */; };
+		92C256961BCE34D200D241FE /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256921BCE34D200D241FE /* DPAPI.m */; };
+		92C256971BCE34D200D241FE /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256951BCE34D200D241FE /* DPRequest.m */; };
 		92DD02C61BC7A2010052E8A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DD02C51BC7A2010052E8A4 /* Images.xcassets */; };
 		92DD02D51BC7A2010052E8A4 /* PPBuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD02D41BC7A2010052E8A4 /* PPBuyTests.m */; };
 		92DD03A21BC8B5DF0052E8A4 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */; };
@@ -123,6 +125,11 @@
 		92C256491BCCB65400D241FE /* PPSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSort.m; sourceTree = "<group>"; };
 		92C2564C1BCCBA5400D241FE /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
 		92C2564D1BCCBA5400D241FE /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		92C256911BCE34D200D241FE /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
+		92C256921BCE34D200D241FE /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
+		92C256931BCE34D200D241FE /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
+		92C256941BCE34D200D241FE /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		92C256951BCE34D200D241FE /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		92DD02B51BC7A2010052E8A4 /* PPBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD02B91BC7A2010052E8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92DD02C51BC7A2010052E8A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -323,6 +330,18 @@
 				92C2564D1BCCBA5400D241FE /* MyButton.m */,
 			);
 			name = "UIButton+Extention";
+			sourceTree = "<group>";
+		};
+		92C256901BCE34D200D241FE /* dianpingapi */ = {
+			isa = PBXGroup;
+			children = (
+				92C256911BCE34D200D241FE /* DPAPI.h */,
+				92C256921BCE34D200D241FE /* DPAPI.m */,
+				92C256931BCE34D200D241FE /* DPConstants.h */,
+				92C256941BCE34D200D241FE /* DPRequest.h */,
+				92C256951BCE34D200D241FE /* DPRequest.m */,
+			);
+			path = dianpingapi;
 			sourceTree = "<group>";
 		};
 		92DD02AC1BC7A2010052E8A4 = {
@@ -615,6 +634,7 @@
 		92DD03A11BC8B5DF0052E8A4 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				92C256901BCE34D200D241FE /* dianpingapi */,
 				92C256181BCB540900D241FE /* MJExtension */,
 				92C255EC1BCB531200D241FE /* MBProgressHUD */,
 				92DD04451BC8DEF00052E8A4 /* Masonry */,
@@ -798,6 +818,7 @@
 				92C2563A1BCB540900D241FE /* NSString+MJExtension.m in Sources */,
 				92DD03A51BC8B5DF0052E8A4 /* PPNavgationController.m in Sources */,
 				92DD04611BC8DEF00052E8A4 /* MASCompositeConstraint.m in Sources */,
+				92C256961BCE34D200D241FE /* DPAPI.m in Sources */,
 				92DD04631BC8DEF00052E8A4 /* MASConstraintMaker.m in Sources */,
 				92DD04831BC919B80052E8A4 /* PPCity.m in Sources */,
 				92C2563D1BCB667700D241FE /* PPHomeCitySearchViewController.m in Sources */,
@@ -830,6 +851,7 @@
 				92DD04651BC8DEF00052E8A4 /* MASViewAttribute.m in Sources */,
 				92DD04791BC8FBF50052E8A4 /* PPHomeRegionViewController.m in Sources */,
 				92DD04621BC8DEF00052E8A4 /* MASConstraint.m in Sources */,
+				92C256971BCE34D200D241FE /* DPRequest.m in Sources */,
 				92DD03A61BC8B5DF0052E8A4 /* PPConst.m in Sources */,
 				92C255F21BCB531200D241FE /* MBProgressHUD+MJ.m in Sources */,
 				92DD04661BC8DEF00052E8A4 /* MASViewConstraint.m in Sources */,
