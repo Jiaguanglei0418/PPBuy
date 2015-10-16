@@ -54,4 +54,7 @@ publish_date	string	团购发布上线日期
  /**  发布日期 ***/
 @property (nonatomic, copy) NSString *publish_date;
 
+ /**  deal_h5_url团购HTML5页面链接，适用于移动应用和联网车载应用 ***/
+@property (nonatomic, copy) NSString *deal_h5_url;
+
 @end

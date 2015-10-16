@@ -19,6 +19,7 @@
 #import "PPSort.h"
 #import "PPCategory.h"
 #import "PPRegion.h"
+#import "MBProgressHUD+MJ.h"
 
 #import "MJRefresh.h"
 #import "AwesomeMenu.h"
@@ -443,13 +444,17 @@
  */
 - (void)searchMethod:(UIBarButtonItem *)item
 {
-    LogRed(@"%s",__func__);
-    
-    PPSearchViewController *searchVc = [[PPSearchViewController alloc] init];
-
-    [self presentViewController:[[PPNavgationController alloc] initWithRootViewController:searchVc] animated:YES completion:^{
+    //
+    if(self.selectedCityName){
+        PPSearchViewController *searchVc = [[PPSearchViewController alloc] init];
         
-    }];
+        searchVc.title = self.selectedCityName;
+        
+        [self presentViewController:[[PPNavgationController alloc] initWithRootViewController:searchVc] animated:YES completion:^{
+        }];
+    }else{
+        [MBProgressHUD showError:@"请选择城市" toView:self.collectionView];
+    }
 }
 
 

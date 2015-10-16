@@ -18,6 +18,8 @@
 #import "MBProgressHUD+MJ.h"
 #import "Masonry.h"
 
+#import "PPDetailViewController.h"
+
 @interface PPDealsViewController ()<DPRequestDelegate>
  /**  所有团购数据 ***/
 @property (nonatomic, strong) NSMutableArray *deals;
@@ -261,5 +263,10 @@ static NSString * const reuseIdentifier = @"deal";
 }
 
 #pragma mark <UICollectionViewDelegate>
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PPDetailViewController *detailVc = [[PPDetailViewController alloc] init];
+    detailVc.deal = self.deals[indexPath.row];
+    [self presentViewController:detailVc animated:YES completion:nil];
+}
 @end
