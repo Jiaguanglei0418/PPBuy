@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 roseonly. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PPDealsViewController.h"
 
-@interface PPHomeViewController : UICollectionViewController
+@interface PPHomeViewController : PPDealsViewController
 
 @end

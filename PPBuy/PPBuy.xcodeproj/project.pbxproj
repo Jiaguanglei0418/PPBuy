@@ -26,6 +26,11 @@
 		929E3F851BCFBAE600233361 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F701BCFBAE600233361 /* UIScrollView+MJExtension.m */; };
 		929E3F861BCFBAE600233361 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F721BCFBAE600233361 /* UIScrollView+MJRefresh.m */; };
 		929E3F871BCFBAE600233361 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F741BCFBAE600233361 /* UIView+MJExtension.m */; };
+		929E3F8A1BD09BA800233361 /* PPDealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F891BD09BA800233361 /* PPDealsViewController.m */; };
+		929E3F901BD0A98900233361 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F8D1BD0A98900233361 /* AwesomeMenu.m */; };
+		929E3F911BD0A98900233361 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F8F1BD0A98900233361 /* AwesomeMenuItem.m */; };
+		929E3F9C1BD0F02C00233361 /* PPCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F9B1BD0F02C00233361 /* PPCollectViewController.m */; };
+		929E3F9F1BD0F05000233361 /* PPRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F9E1BD0F05000233361 /* PPRecentViewController.m */; };
 		92C255F21BCB531200D241FE /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C255EE1BCB531200D241FE /* MBProgressHUD+MJ.m */; };
 		92C255F31BCB531200D241FE /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92C255EF1BCB531200D241FE /* MBProgressHUD.bundle */; };
 		92C255F41BCB531200D241FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C255F11BCB531200D241FE /* MBProgressHUD.m */; };
@@ -69,7 +74,6 @@
 		92C256E91BCF495500D241FE /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C256E81BCF495500D241FE /* ImageIO.framework */; };
 		92C256EC1BCF73A200D241FE /* PPCenteLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C256EB1BCF73A200D241FE /* PPCenteLineLabel.m */; };
 		92C257DA1BCFB58800D241FE /* PPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C257D81BCFB58800D241FE /* PPSearchViewController.m */; };
-		92C257DB1BCFB58800D241FE /* PPSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C257D91BCFB58800D241FE /* PPSearchViewController.xib */; };
 		92DD02C61BC7A2010052E8A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DD02C51BC7A2010052E8A4 /* Images.xcassets */; };
 		92DD02D51BC7A2010052E8A4 /* PPBuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD02D41BC7A2010052E8A4 /* PPBuyTests.m */; };
 		92DD03A21BC8B5DF0052E8A4 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DD03711BC8B5DF0052E8A4 /* PPHomeViewController.m */; };
@@ -167,6 +171,16 @@
 		929E3F721BCFBAE600233361 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		929E3F731BCFBAE600233361 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		929E3F741BCFBAE600233361 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		929E3F881BD09BA800233361 /* PPDealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDealsViewController.h; sourceTree = "<group>"; };
+		929E3F891BD09BA800233361 /* PPDealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDealsViewController.m; sourceTree = "<group>"; };
+		929E3F8C1BD0A98900233361 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		929E3F8D1BD0A98900233361 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		929E3F8E1BD0A98900233361 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		929E3F8F1BD0A98900233361 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		929E3F9A1BD0F02C00233361 /* PPCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectViewController.h; sourceTree = "<group>"; };
+		929E3F9B1BD0F02C00233361 /* PPCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectViewController.m; sourceTree = "<group>"; };
+		929E3F9D1BD0F05000233361 /* PPRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRecentViewController.h; sourceTree = "<group>"; };
+		929E3F9E1BD0F05000233361 /* PPRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRecentViewController.m; sourceTree = "<group>"; };
 		92C255ED1BCB531200D241FE /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		92C255EE1BCB531200D241FE /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		92C255EF1BCB531200D241FE /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -253,7 +267,6 @@
 		92C256EB1BCF73A200D241FE /* PPCenteLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCenteLineLabel.m; sourceTree = "<group>"; };
 		92C257D71BCFB58800D241FE /* PPSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSearchViewController.h; sourceTree = "<group>"; };
 		92C257D81BCFB58800D241FE /* PPSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSearchViewController.m; sourceTree = "<group>"; };
-		92C257D91BCFB58800D241FE /* PPSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPSearchViewController.xib; sourceTree = "<group>"; };
 		92DD02B51BC7A2010052E8A4 /* PPBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DD02B91BC7A2010052E8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92DD02C51BC7A2010052E8A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -457,6 +470,83 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		929E3F8B1BD0A98900233361 /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				929E3F8C1BD0A98900233361 /* AwesomeMenu.h */,
+				929E3F8D1BD0A98900233361 /* AwesomeMenu.m */,
+				929E3F8E1BD0A98900233361 /* AwesomeMenuItem.h */,
+				929E3F8F1BD0A98900233361 /* AwesomeMenuItem.m */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		929E3F921BD0EE5800233361 /* Collect(收藏) */ = {
+			isa = PBXGroup;
+			children = (
+				929E3F931BD0EE5800233361 /* Controllers */,
+				929E3F941BD0EE5800233361 /* Models */,
+				929E3F951BD0EE5800233361 /* Views */,
+			);
+			path = "Collect(收藏)";
+			sourceTree = "<group>";
+		};
+		929E3F931BD0EE5800233361 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				929E3F9A1BD0F02C00233361 /* PPCollectViewController.h */,
+				929E3F9B1BD0F02C00233361 /* PPCollectViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		929E3F941BD0EE5800233361 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		929E3F951BD0EE5800233361 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		929E3F961BD0EE9100233361 /* Recent(记录) */ = {
+			isa = PBXGroup;
+			children = (
+				929E3F971BD0EE9100233361 /* Controllers */,
+				929E3F981BD0EE9100233361 /* Models */,
+				929E3F991BD0EE9100233361 /* Views */,
+			);
+			path = "Recent(记录)";
+			sourceTree = "<group>";
+		};
+		929E3F971BD0EE9100233361 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				929E3F9D1BD0F05000233361 /* PPRecentViewController.h */,
+				929E3F9E1BD0F05000233361 /* PPRecentViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		929E3F981BD0EE9100233361 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		929E3F991BD0EE9100233361 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		92C255EC1BCB531200D241FE /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +743,6 @@
 			children = (
 				92C257D71BCFB58800D241FE /* PPSearchViewController.h */,
 				92C257D81BCFB58800D241FE /* PPSearchViewController.m */,
-				92C257D91BCFB58800D241FE /* PPSearchViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -731,6 +820,8 @@
 		92DD036D1BC8B5DF0052E8A4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				929E3F961BD0EE9100233361 /* Recent(记录) */,
+				929E3F921BD0EE5800233361 /* Collect(收藏) */,
 				92C257D31BCFB49F00D241FE /* Search(搜索) */,
 				92DD036E1BC8B5DF0052E8A4 /* Home(首页) */,
 				92DD03771BC8B5DF0052E8A4 /* Main(主要) */,
@@ -803,6 +894,8 @@
 			children = (
 				92DD03791BC8B5DF0052E8A4 /* PPNavgationController.h */,
 				92DD037A1BC8B5DF0052E8A4 /* PPNavgationController.m */,
+				929E3F881BD09BA800233361 /* PPDealsViewController.h */,
+				929E3F891BD09BA800233361 /* PPDealsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -959,6 +1052,7 @@
 		92DD03A11BC8B5DF0052E8A4 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				929E3F8B1BD0A98900233361 /* AwesomeMenu */,
 				929E3F481BCFBAE600233361 /* MJRefresh */,
 				92C256B61BCF492900D241FE /* SDWebImage */,
 				92C256901BCE34D200D241FE /* dianpingapi */,
@@ -1112,7 +1206,6 @@
 				92C255F31BCB531200D241FE /* MBProgressHUD.bundle in Resources */,
 				92DD02C61BC7A2010052E8A4 /* Images.xcassets in Resources */,
 				92DD03C21BC8C2750052E8A4 /* sorts.plist in Resources */,
-				92C257DB1BCFB58800D241FE /* PPSearchViewController.xib in Resources */,
 				92DD03B61BC8B7030052E8A4 /* PPHomeDropDown.xib in Resources */,
 				92DD03C01BC8C2750052E8A4 /* cities.plist in Resources */,
 				92DD03A41BC8B5DF0052E8A4 /* PPHomeTopItem.xib in Resources */,
@@ -1137,7 +1230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92DD04691BC8DEF00052E8A4 /* View+MASAdditions.m in Sources */,
+				929E3F911BD0A98900233361 /* AwesomeMenuItem.m in Sources */,
 				92C256AF1BCE585600D241FE /* PPDeal.m in Sources */,
+				929E3F8A1BD09BA800233361 /* PPDealsViewController.m in Sources */,
 				92C256341BCB540900D241FE /* MJPropertyKey.m in Sources */,
 				92C256311BCB540900D241FE /* MJExtensionConst.m in Sources */,
 				92C256E51BCF492900D241FE /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1145,6 +1240,7 @@
 				92C256471BCCB5A300D241FE /* PPHomeSortViewController.m in Sources */,
 				929E3F7D1BCFBAE600233361 /* MJRefreshBackGifFooter.m in Sources */,
 				92C256B41BCE662A00D241FE /* PPHomeDealCell.m in Sources */,
+				929E3F9C1BD0F02C00233361 /* PPCollectViewController.m in Sources */,
 				929E3F771BCFBAE600233361 /* MJRefreshComponent.m in Sources */,
 				92DD03B41BC8B6CE0052E8A4 /* PPHomeDropDown.m in Sources */,
 				92C256351BCB540900D241FE /* MJPropertyType.m in Sources */,
@@ -1152,6 +1248,7 @@
 				92C256DC1BCF492900D241FE /* SDWebImageDecoder.m in Sources */,
 				929E3F841BCFBAE600233361 /* MJRefreshConst.m in Sources */,
 				929E3F7F1BCFBAE600233361 /* MJRefreshBackStateFooter.m in Sources */,
+				929E3F9F1BD0F05000233361 /* PPRecentViewController.m in Sources */,
 				92DD047E1BC907A30052E8A4 /* PPHomeCityViewController.m in Sources */,
 				92DD03B01BC8B5DF0052E8A4 /* UIWindow+Extension.m in Sources */,
 				929E3F761BCFBAE600233361 /* MJRefreshBackFooter.m in Sources */,
@@ -1217,6 +1314,7 @@
 				92DD03A61BC8B5DF0052E8A4 /* PPConst.m in Sources */,
 				92C255F21BCB531200D241FE /* MBProgressHUD+MJ.m in Sources */,
 				92C256DF1BCF492900D241FE /* SDWebImageManager.m in Sources */,
+				929E3F901BD0A98900233361 /* AwesomeMenu.m in Sources */,
 				929E3F851BCFBAE600233361 /* UIScrollView+MJExtension.m in Sources */,
 				92DD04661BC8DEF00052E8A4 /* MASViewConstraint.m in Sources */,
 				92DD03A71BC8B5DF0052E8A4 /* AppDelegate.m in Sources */,

@@ -7,92 +7,87 @@
 //
 
 #import "PPSearchViewController.h"
+#import "UIBarButtonItem+Extension.h"
 
-@interface PPSearchViewController ()
+#import "MJRefresh.h"
+
+@interface PPSearchViewController ()<UISearchBarDelegate>
 
 @end
 
 @implementation PPSearchViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //
-    self.preferredContentSize = ;
+    // 设置导航栏
+    [self setupNav];
     
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
 }
+
+
+/**
+ *  设置右边导航栏内容
+ */
+- (void)setupNav
+{
+    // 1. 左边的返回按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"icon_back" highImage:@"icon_back_highlighted"];
+    
+    // 2. 中间搜索框
+    // [注意]: 当把searchBar直接 成为titleView的时候, 默认填充整个title宽度, 设置无效
+    // 中间层
+//    UIView *titleView = [[UIView alloc] init];
+//    titleView.size = CGSizeMake(400, 40);
+//    self.navigationItem.titleView = titleView;
+
+    UISearchBar *searchBar = [[UISearchBar alloc] init];
+    searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
+    searchBar.placeholder = @"请输入关键词";
+    searchBar.delegate = self;
+//    searchBar.frame = titleView.bounds;
+//    [titleView addSubview:searchBar];
+    self.navigationItem.titleView = searchBar;
+}
+
+
+/**
+ *  监听返回按钮点击
+ */
+- (void)back
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    // 向服务器, 发送请求
+    [self.collectionView.header beginRefreshing];
+    
+    // 键盘弹回
+//    [searchBar endEditing:YES];
+    [searchBar resignFirstResponder];
+    
+    //
+}
+
+
+#pragma mark - 实现父类方法
+- (void)setupParams:(NSMutableDictionary *)params
+{
+    params[@"city"] = @"北京";
+    UISearchBar *searchBar = (UISearchBar *)self.navigationItem.titleView;
+    params[@"keyword"] = searchBar.text;
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
-}
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
-}
-
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
-
 @end

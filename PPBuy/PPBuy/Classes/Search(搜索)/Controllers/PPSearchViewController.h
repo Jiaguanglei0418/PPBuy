@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PPSearchViewController : UICollectionViewController
+#import "PPDealsViewController.h"
+@interface PPSearchViewController : PPDealsViewController
 
 @end
