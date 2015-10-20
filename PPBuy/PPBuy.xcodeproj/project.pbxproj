@@ -33,6 +33,15 @@
 		929E3F9F1BD0F05000233361 /* PPRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F9E1BD0F05000233361 /* PPRecentViewController.m */; };
 		929E3FA71BD1016700233361 /* PPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FA51BD1016700233361 /* PPDetailViewController.m */; };
 		929E3FA81BD1016700233361 /* PPDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929E3FA61BD1016700233361 /* PPDetailViewController.xib */; };
+		929E3FAA1BD492C400233361 /* Detail.html in Resources */ = {isa = PBXBuildFile; fileRef = 929E3FA91BD492C400233361 /* Detail.html */; };
+		929E3FAD1BD4D80600233361 /* PPDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FAC1BD4D80600233361 /* PPDetail.m */; };
+		929E3FAF1BD4FF7500233361 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 929E3FAE1BD4FF7500233361 /* libsqlite3.dylib */; };
+		929E3FB31BD5007700233361 /* PPDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FB21BD5007700233361 /* PPDealTool.m */; };
+		929E3FC01BD5017600233361 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FB61BD5017600233361 /* FMDatabase.m */; };
+		929E3FC11BD5017600233361 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FB81BD5017600233361 /* FMDatabaseAdditions.m */; };
+		929E3FC21BD5017600233361 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FBA1BD5017600233361 /* FMDatabasePool.m */; };
+		929E3FC31BD5017600233361 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FBC1BD5017600233361 /* FMDatabaseQueue.m */; };
+		929E3FC41BD5017600233361 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3FBF1BD5017600233361 /* FMResultSet.m */; };
 		92C255F21BCB531200D241FE /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C255EE1BCB531200D241FE /* MBProgressHUD+MJ.m */; };
 		92C255F31BCB531200D241FE /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92C255EF1BCB531200D241FE /* MBProgressHUD.bundle */; };
 		92C255F41BCB531200D241FE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C255F11BCB531200D241FE /* MBProgressHUD.m */; };
@@ -186,6 +195,24 @@
 		929E3FA41BD1016700233361 /* PPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDetailViewController.h; sourceTree = "<group>"; };
 		929E3FA51BD1016700233361 /* PPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDetailViewController.m; sourceTree = "<group>"; };
 		929E3FA61BD1016700233361 /* PPDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPDetailViewController.xib; sourceTree = "<group>"; };
+		929E3FA91BD492C400233361 /* Detail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Detail.html; sourceTree = "<group>"; };
+		929E3FAB1BD4D80600233361 /* PPDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDetail.h; sourceTree = "<group>"; };
+		929E3FAC1BD4D80600233361 /* PPDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDetail.m; sourceTree = "<group>"; };
+		929E3FAE1BD4FF7500233361 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		929E3FB11BD5007700233361 /* PPDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDealTool.h; sourceTree = "<group>"; };
+		929E3FB21BD5007700233361 /* PPDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDealTool.m; sourceTree = "<group>"; };
+		929E3FB51BD5017600233361 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		929E3FB61BD5017600233361 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		929E3FB71BD5017600233361 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		929E3FB81BD5017600233361 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		929E3FB91BD5017600233361 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		929E3FBA1BD5017600233361 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		929E3FBB1BD5017600233361 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		929E3FBC1BD5017600233361 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		929E3FBD1BD5017600233361 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		929E3FBE1BD5017600233361 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		929E3FBF1BD5017600233361 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		929E3FC51BD5E3FF00233361 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		92C255ED1BCB531200D241FE /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		92C255EE1BCB531200D241FE /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		92C255EF1BCB531200D241FE /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -368,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929E3FAF1BD4FF7500233361 /* libsqlite3.dylib in Frameworks */,
 				92C256E91BCF495500D241FE /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +603,8 @@
 		929E3FA21BD100DC00233361 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				929E3FAB1BD4D80600233361 /* PPDetail.h */,
+				929E3FAC1BD4D80600233361 /* PPDetail.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +614,35 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		929E3FB01BD4FFB900233361 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				929E3FC51BD5E3FF00233361 /* Singleton.h */,
+				929E3FB11BD5007700233361 /* PPDealTool.h */,
+				929E3FB21BD5007700233361 /* PPDealTool.m */,
+			);
+			name = database;
+			path = ../../Others/database;
+			sourceTree = "<group>";
+		};
+		929E3FB41BD5017600233361 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				929E3FB51BD5017600233361 /* FMDatabase.h */,
+				929E3FB61BD5017600233361 /* FMDatabase.m */,
+				929E3FB71BD5017600233361 /* FMDatabaseAdditions.h */,
+				929E3FB81BD5017600233361 /* FMDatabaseAdditions.m */,
+				929E3FB91BD5017600233361 /* FMDatabasePool.h */,
+				929E3FBA1BD5017600233361 /* FMDatabasePool.m */,
+				929E3FBB1BD5017600233361 /* FMDatabaseQueue.h */,
+				929E3FBC1BD5017600233361 /* FMDatabaseQueue.m */,
+				929E3FBD1BD5017600233361 /* FMDB.h */,
+				929E3FBE1BD5017600233361 /* FMResultSet.h */,
+				929E3FBF1BD5017600233361 /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		92C255EC1BCB531200D241FE /* MBProgressHUD */ = {
@@ -803,6 +862,7 @@
 		92DD02AC1BC7A2010052E8A4 = {
 			isa = PBXGroup;
 			children = (
+				929E3FAE1BD4FF7500233361 /* libsqlite3.dylib */,
 				92C256E81BCF495500D241FE /* ImageIO.framework */,
 				92DD02B71BC7A2010052E8A4 /* PPBuy */,
 				92DD02D11BC7A2010052E8A4 /* PPBuyTests */,
@@ -835,6 +895,7 @@
 				92DD02C51BC7A2010052E8A4 /* Images.xcassets */,
 				92DD02B91BC7A2010052E8A4 /* Info.plist */,
 				92DD02DE1BC7A3430052E8A4 /* PrefixHeader.pch */,
+				929E3FA91BD492C400233361 /* Detail.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -950,6 +1011,7 @@
 		92DD037C1BC8B5DF0052E8A4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				929E3FB01BD4FFB900233361 /* database */,
 				92DD037D1BC8B5DF0052E8A4 /* PPConst.h */,
 				92DD037E1BC8B5DF0052E8A4 /* PPConst.m */,
 				92C2563E1BCBB42100D241FE /* PPMetaTool.h */,
@@ -1092,6 +1154,7 @@
 		92DD03A11BC8B5DF0052E8A4 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				929E3FB41BD5017600233361 /* fmdb */,
 				929E3F8B1BD0A98900233361 /* AwesomeMenu */,
 				929E3F481BCFBAE600233361 /* MJRefresh */,
 				92C256B61BCF492900D241FE /* SDWebImage */,
@@ -1251,6 +1314,7 @@
 				92DD03C01BC8C2750052E8A4 /* cities.plist in Resources */,
 				92DD03A41BC8B5DF0052E8A4 /* PPHomeTopItem.xib in Resources */,
 				92DD047A1BC8FBF50052E8A4 /* PPHomeRegionViewController.xib in Resources */,
+				929E3FAA1BD492C400233361 /* Detail.html in Resources */,
 				92C256B51BCE662A00D241FE /* PPHomeDealCell.xib in Resources */,
 				92DD03C11BC8C2750052E8A4 /* cityGroups.plist in Resources */,
 			);
@@ -1282,6 +1346,7 @@
 				929E3F7D1BCFBAE600233361 /* MJRefreshBackGifFooter.m in Sources */,
 				92C256B41BCE662A00D241FE /* PPHomeDealCell.m in Sources */,
 				929E3F9C1BD0F02C00233361 /* PPCollectViewController.m in Sources */,
+				929E3FC41BD5017600233361 /* FMResultSet.m in Sources */,
 				929E3F771BCFBAE600233361 /* MJRefreshComponent.m in Sources */,
 				92DD03B41BC8B6CE0052E8A4 /* PPHomeDropDown.m in Sources */,
 				92C256351BCB540900D241FE /* MJPropertyType.m in Sources */,
@@ -1291,6 +1356,7 @@
 				929E3F7F1BCFBAE600233361 /* MJRefreshBackStateFooter.m in Sources */,
 				929E3F9F1BD0F05000233361 /* PPRecentViewController.m in Sources */,
 				92DD047E1BC907A30052E8A4 /* PPHomeCityViewController.m in Sources */,
+				929E3FC01BD5017600233361 /* FMDatabase.m in Sources */,
 				92DD03B01BC8B5DF0052E8A4 /* UIWindow+Extension.m in Sources */,
 				929E3F761BCFBAE600233361 /* MJRefreshBackFooter.m in Sources */,
 				929E3F811BCFBAE600233361 /* MJRefreshNormalHeader.m in Sources */,
@@ -1314,12 +1380,14 @@
 				92DD03AF1BC8B5DF0052E8A4 /* UIView+Extension.m in Sources */,
 				92C256D81BCF492900D241FE /* MKAnnotationView+WebCache.m in Sources */,
 				92DD046A1BC8DEF00052E8A4 /* ViewController+MASAdditions.m in Sources */,
+				929E3FAD1BD4D80600233361 /* PPDetail.m in Sources */,
 				92C256371BCB540900D241FE /* NSObject+MJCoding.m in Sources */,
 				92C256E11BCF492900D241FE /* UIButton+WebCache.m in Sources */,
 				92DD04641BC8DEF00052E8A4 /* MASLayoutConstraint.m in Sources */,
 				92C2564A1BCCB65400D241FE /* PPSort.m in Sources */,
 				929E3F7E1BCFBAE600233361 /* MJRefreshBackNormalFooter.m in Sources */,
 				92DD03AD1BC8B5DF0052E8A4 /* UIImage+JGL.m in Sources */,
+				929E3FC11BD5017600233361 /* FMDatabaseAdditions.m in Sources */,
 				92DD04861BC91A5D0052E8A4 /* PPRegion.m in Sources */,
 				92C256401BCBB42100D241FE /* PPMetaTool.m in Sources */,
 				92C256361BCB540900D241FE /* NSObject+MJClass.m in Sources */,
@@ -1334,6 +1402,7 @@
 				929E3F751BCFBAE600233361 /* MJRefreshAutoFooter.m in Sources */,
 				92DD03B91BC8BCDA0052E8A4 /* PPHomeCategoryController.m in Sources */,
 				92C2564E1BCCBA5400D241FE /* MyButton.m in Sources */,
+				929E3FB31BD5007700233361 /* PPDealTool.m in Sources */,
 				92DD03AC1BC8B5DF0052E8A4 /* UIBarButtonItem+Extension.m in Sources */,
 				92DD03A31BC8B5DF0052E8A4 /* PPHomeTopItem.m in Sources */,
 				929E3F821BCFBAE600233361 /* MJRefreshStateHeader.m in Sources */,
@@ -1346,6 +1415,7 @@
 				92C256E21BCF492900D241FE /* UIImage+GIF.m in Sources */,
 				929E3F871BCFBAE600233361 /* UIView+MJExtension.m in Sources */,
 				92C257DA1BCFB58800D241FE /* PPSearchViewController.m in Sources */,
+				929E3FC31BD5017600233361 /* FMDatabaseQueue.m in Sources */,
 				92DD03B11BC8B5DF0052E8A4 /* main.m in Sources */,
 				92DD04721BC8F2AC0052E8A4 /* PPHomeDropdownPreCell.m in Sources */,
 				92DD04651BC8DEF00052E8A4 /* MASViewAttribute.m in Sources */,
@@ -1359,6 +1429,7 @@
 				929E3F851BCFBAE600233361 /* UIScrollView+MJExtension.m in Sources */,
 				92DD04661BC8DEF00052E8A4 /* MASViewConstraint.m in Sources */,
 				92DD03A71BC8B5DF0052E8A4 /* AppDelegate.m in Sources */,
+				929E3FC21BD5017600233361 /* FMDatabasePool.m in Sources */,
 				92DD03AB1BC8B5DF0052E8A4 /* NSString+Extension.m in Sources */,
 				92DD04671BC8DEF00052E8A4 /* NSArray+MASAdditions.m in Sources */,
 				92DD03A81BC8B5DF0052E8A4 /* Foundation+Log.m in Sources */,

@@ -24,7 +24,10 @@ NSString *const PPHomeRegionVcRegionSelectedNoticefication = @"PPHomeRegionVcReg
 NSString *const PPHomeRegionSelectedRegion = @"PPHomeRegionSelectedRegion";
 NSString *const PPHomeRegionSelectedSubRegionName = @"PPHomeRegionSelectedSubRegionName";
 
-
+// 监听收藏, 取消收藏 通知
+NSString *const PPCollectionStateDidChangeNoticefication = @"PPCollectionStateDidChangeNoticefication";
+NSString *const PPIsCollectedkey = @"PPIsCollectedkey";
+NSString *const PPCollectDealkey = @"PPCollectDealkey";
 
 
 

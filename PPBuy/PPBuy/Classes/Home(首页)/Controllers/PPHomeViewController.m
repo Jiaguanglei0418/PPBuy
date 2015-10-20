@@ -40,7 +40,7 @@
 @property (nonatomic, weak) UIBarButtonItem *sortItem;
 
 // 当前选中城市名称
-@property (nonatomic, copy) NSString *selectedCityName;
+//@property (nonatomic, copy) NSString *selectedCityName;
 // 当前选中区域名称
 @property (nonatomic, copy) NSString *selectedRegionName;
 // 当前选中分类名称
@@ -126,7 +126,7 @@
 - (void)awesomeMenuDidFinishAnimationOpen:(AwesomeMenu *)menu
 {
 
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         menu.alpha = 1.0;
     }];
     

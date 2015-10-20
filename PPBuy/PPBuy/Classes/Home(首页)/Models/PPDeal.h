@@ -29,7 +29,7 @@
 publish_date	string	团购发布上线日期
  */
 #import <Foundation/Foundation.h>
-
+@class PPDetail;
 @interface PPDeal : NSObject
 /** 团购单ID */
 @property (copy, nonatomic) NSString *deal_id;
@@ -56,5 +56,9 @@ publish_date	string	团购发布上线日期
 
  /**  deal_h5_url团购HTML5页面链接，适用于移动应用和联网车载应用 ***/
 @property (nonatomic, copy) NSString *deal_h5_url;
+ /**  过期时间 ***/
+@property (nonatomic, copy) NSString *purchase_deadline;
+
+@property (nonatomic, strong) PPDetail *restrictions;
 
 @end

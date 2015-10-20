@@ -11,6 +11,8 @@
 
 @interface PPDealsViewController : UICollectionViewController
 
+@property (nonatomic, copy) NSString *selectedCityName;
+
 /**
  *  设置请求参数  -- 思想: 父类提供方法, 交给子类来实现(父类统一调用)
  */

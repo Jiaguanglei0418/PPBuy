@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) PPDeal *deal;
 
+ /**  选中参数 ***/
+@property (nonatomic, strong) NSString *selectedCity;
+
 @end

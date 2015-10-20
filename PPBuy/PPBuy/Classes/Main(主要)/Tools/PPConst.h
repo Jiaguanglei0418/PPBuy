@@ -29,6 +29,10 @@ extern NSString *const PPHomeRegionVcRegionSelectedNoticefication;
 extern NSString *const PPHomeRegionSelectedRegion;
 extern NSString *const PPHomeRegionSelectedSubRegionName;
 
+// 监听收藏, 取消收藏 通知
+extern NSString *const PPCollectionStateDidChangeNoticefication;
+extern NSString *const PPIsCollectedkey;
+extern NSString *const PPCollectDealkey;
 
 
 

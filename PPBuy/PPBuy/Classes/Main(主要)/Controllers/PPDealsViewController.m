@@ -267,6 +267,8 @@ static NSString * const reuseIdentifier = @"deal";
 {
     PPDetailViewController *detailVc = [[PPDetailViewController alloc] init];
     detailVc.deal = self.deals[indexPath.row];
+    detailVc.selectedCity = self.selectedCityName;
+    
     [self presentViewController:detailVc animated:YES completion:nil];
 }
 @end
