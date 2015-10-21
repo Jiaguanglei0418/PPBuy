@@ -56,9 +56,15 @@ publish_date	string	团购发布上线日期
 
  /**  deal_h5_url团购HTML5页面链接，适用于移动应用和联网车载应用 ***/
 @property (nonatomic, copy) NSString *deal_h5_url;
+@property (nonatomic, copy) NSString *deal_url;
  /**  过期时间 ***/
 @property (nonatomic, copy) NSString *purchase_deadline;
-
+ /**  限制条件 ***/
 @property (nonatomic, strong) PPDetail *restrictions;
+
+ /**  是否正在编辑状态 ***/
+@property (nonatomic, assign, getter=isEditing) BOOL editing;
+/**  是否正在被勾选状态 ***/
+@property (nonatomic, assign, getter=isChecking) BOOL checking;
 
 @end

@@ -35,6 +35,10 @@ extern NSString *const PPIsCollectedkey;
 extern NSString *const PPCollectDealkey;
 
 
+// 监听支付宝 完成支付, 跳转
+extern NSString *const PPAlipayResultNoticefication;
+extern NSString *const PPAlipayResultURLKey;
+
 
 
 /**

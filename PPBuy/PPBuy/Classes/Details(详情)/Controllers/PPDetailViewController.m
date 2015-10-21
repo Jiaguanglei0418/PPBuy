@@ -17,6 +17,19 @@
 
 #import "PPDealTool.h"// 数据库
 
+
+#import <AlipaySDK/AlipaySDK.h>// 支付宝
+#import "DataSigner.h"
+#import "Order.h"
+#import "PartnerConfig.h"
+
+#import "UMSocial.h"
+
+//#import "AlixPayOrder.h"//订单
+//#import "DataSigner.h"
+//#import "PartnerConfig.h"
+
+
 @interface PPDetailViewController ()<UIWebViewDelegate,DPRequestDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -63,6 +76,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 打开一个团购的detail, 添加到最近访问, 当在记录里面, 点击进入详情的时候, 需要先将本团购删除, 再执行添加
+    
+    
     // 加载 webView
     self.webView.hidden = YES;
     self.webView.backgroundColor = PPCOLOR_BG;
@@ -215,16 +232,82 @@
  *  监听分享按钮
  */
 - (IBAction)shareBtnDidSelected {
-    
+    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskLandscape];
+    // 友盟分享
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UM_APPKEY
+                                      shareText:self.deal.desc
+                                     shareImage:[UIImage imageNamed:@"icon_deals_empty"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToDouban, UMShareToEmail,UMShareToSms,UMShareToFacebook,UMShareToTwitter, UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQzone,UMShareToQQ ,nil]
+                                       delegate:nil];
 }
+
+#pragma mark - UM分享, 回调
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+
 
 /**
  *  监听购买按钮
  */
 - (IBAction)buyNowBtnDidSelected {
+    // 直接打开大众点评的 URL
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.deal.deal_url]];
+//    LogRed(@"%s, %@",__func__, self.deal.deal_url);
+#warning ---   集成支付宝
+    // 1. 生成订单信息
+    // 订单信息 == order == [order description]
+    Order *order = [[Order alloc] init];
+    // 商品名称
+    order.productName = self.deal.title;
+    // 商品描述
+    order.productDescription = self.deal.desc;
+    // 支付宝生成 商户信息
+    order.partner = @"123123";
+    order.seller = @"123123";
+    
+    // 价格
+    order.amount = [self.deal.current_price description];
+    // 订单编号
+//    order.tradeNO ;
+    
+    // 2. 签名加密
+    id<DataSigner> signer = CreateRSADataSigner(PartnerPrivKey);
+    // 签名信息 - signedString
+    NSString *signedString = [signer signString:[order description]];
+    
+    
+    NSString *orderString = nil;
+    if (signedString != nil) {
+        
+        // 3. 利用订单信息/签名信息/签名类型生成一个订单字符串
+        orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
+                       [order description], signedString, @"RSA"];
+       
+        // 4. 打开客户端, 进行支付(商品名称, 商品价格, 商户信息) - 网页版 回调
+        //将签名成功字符串格式化为订单字符串,请严格按照该格式
+        [[AlipaySDK defaultService] payOrder:orderString fromScheme:@"PPBuy" callback:^(NSDictionary *resultDic) {
+            LogYellow(@"result = %@",resultDic);
+        }];
+        
+    }
+
+//     payOrder:orderString AndScheme:@"PPBuy" seletor:@selector(getResult:) target:self];
+    
     
 }
 
+- (void)getResult:(NSString *)result
+{
+    
+}
 
 #pragma mark - 设置屏幕方向
 /**

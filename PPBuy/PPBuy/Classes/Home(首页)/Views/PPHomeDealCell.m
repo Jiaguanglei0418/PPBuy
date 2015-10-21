@@ -26,6 +26,11 @@
  /**  是否新单图标 ***/
 @property (weak, nonatomic) IBOutlet UIImageView *isNewDealImageView;
 
+ /**  遮盖按钮 ***/
+@property (weak, nonatomic) IBOutlet UIButton *coverBtn;
+- (IBAction)coverBtnDidSelected:(id)sender;
+ /**  勾选标识 ***/
+@property (weak, nonatomic) IBOutlet UIImageView *checkView;
 
 
 @end
@@ -95,5 +100,28 @@
     // 发布日期 < 今天  -- 隐藏
     self.isNewDealImageView.hidden = [deal.publish_date compare:nowStr] == NSOrderedAscending;
 //    self.isNewDealImageView.hidden = ![deal.publish_date isEqualToString:nowStr];
+    
+    // 设置cover的显示与隐藏
+    self.coverBtn.hidden = !self.deal.isEditing;
+    
+    // 设置勾选显示
+    self.checkView.hidden = !self.deal.isChecking;
+    
+}
+
+/**
+ *  监听遮盖按钮点击
+ */
+- (IBAction)coverBtnDidSelected:(id)sender {
+    // 设置模型
+    self.deal.checking = !self.deal.isChecking;
+    
+    // 修改状态
+    self.checkView.hidden = !self.deal.isChecking;
+    
+    // 代理方法
+    if ([self.delegate respondsToSelector:@selector(cellCheckingStateDidChanged:)]) {
+        [self.delegate performSelector:@selector(cellCheckingStateDidChanged:) withObject:self];
+    }
 }
 @end

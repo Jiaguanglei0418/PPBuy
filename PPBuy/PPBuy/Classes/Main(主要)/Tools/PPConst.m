@@ -29,5 +29,8 @@ NSString *const PPCollectionStateDidChangeNoticefication = @"PPCollectionStateDi
 NSString *const PPIsCollectedkey = @"PPIsCollectedkey";
 NSString *const PPCollectDealkey = @"PPCollectDealkey";
 
+// 监听支付宝 完成支付, 跳转
+NSString *const PPAlipayResultNoticefication = @"PPAlipayResultNoticefication";
+NSString *const PPAlipayResultURLKey = @"PPAlipayResultURLKey";
 
 

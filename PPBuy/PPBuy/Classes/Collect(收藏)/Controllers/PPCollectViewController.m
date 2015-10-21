@@ -22,7 +22,7 @@ NSString *const PPDone = @"完成";
 NSString *const PPEdit = @"编辑";
 #define PPString(str) [NSString stringWithFormat:@"    %@   ",str]
 
-@interface PPCollectViewController ()
+@interface PPCollectViewController ()<PPHomeDealCellDelegate>
 /**  没有数据, 提醒ImageView ***/
 @property (nonatomic, weak) UIImageView *noDealsImageView;
 
@@ -169,12 +169,25 @@ static NSString * const reuseIdentifier = @"deal";
 //        gapItem.width = 100;
         
         self.navigationItem.leftBarButtonItems = @[self.backItem, self.selectAllItem, self.unSelectAllItem, self.removeItem];
+        // 进入编辑状态
+        for(PPDeal *deal in self.deals){
+
+            deal.editing = YES;
+        }
+        
     }else{
         item.title = PPEdit;
-        
         self.navigationItem.leftBarButtonItems = @[self.backItem];
+        
+        // 结束编辑状态
+        for(PPDeal *deal in self.deals){
+            deal.editing = NO;
+            deal.checking = NO;
+        }
     }
     
+    // 刷表
+    [self.collectionView reloadData];
 }
 
 /**
@@ -185,20 +198,55 @@ static NSString * const reuseIdentifier = @"deal";
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
+/**
+ *  全选
+ */
 - (void)selectAll:(id)sender
 {
+    for(PPDeal *deal in self.deals){
+        deal.checking = YES;
+    }
     
+    [self.collectionView reloadData];
+    
+    self.removeItem.enabled = YES;
 }
 
+/**
+ *  全不选
+ */
 - (void)unSelectAll:(UIBarButtonItem *)item
 {
-
+    for (PPDeal *deal in self.deals) {
+        deal.checking = NO;
+    }
+    
+    [self.collectionView reloadData];
+    
+    self.removeItem.enabled = NO;
 }
 
+/**
+ *  删除
+ */
 - (void)removeItem:(UIBarButtonItem *)item
 {
-
+    NSMutableArray *tempArray = [NSMutableArray array];
+    
+    for (PPDeal *deal in self.deals) {
+        if (deal.isChecking) {
+            [PPDealTool deleteCollectDeals:deal];
+            
+            [tempArray addObject:deal];
+        }
+    }
+    
+    // 删除所有打钩的模型
+    [self.deals removeObjectsInArray:tempArray];
+    
+    [self.collectionView reloadData];
+    
+    self.removeItem.enabled = NO;
 }
 
 
@@ -289,6 +337,9 @@ static NSString * const reuseIdentifier = @"deal";
 {
     PPHomeDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
+    // 设置代理
+    cell.delegate = self;
+    
     // 赋值
     PPDeal *deal = self.deals[indexPath.row];
     cell.deal = deal;
@@ -306,7 +357,25 @@ static NSString * const reuseIdentifier = @"deal";
     [self presentViewController:detailVc animated:YES completion:nil];
 }
 
+#pragma mark - PPHomeCellDelegate
+- (void)cellCheckingStateDidChanged:(PPHomeDealCell *)cell
+{
+    BOOL hasChecked = NO;
+    for (PPDeal *deal in self.deals) {
+        if (deal.isChecking) {
+            hasChecked = YES;
+            break;
+        }
+    }
+    
+    // 根据 check状态, 决定删除按钮是否可用
+    self.removeItem.enabled = hasChecked;
+}
 
+- (void)dealloc
+{
+    [PPNOTICEFICATION removeObserver:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

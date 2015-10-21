@@ -126,7 +126,7 @@
 - (void)awesomeMenuDidFinishAnimationOpen:(AwesomeMenu *)menu
 {
 
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         menu.alpha = 1.0;
     }];
     
@@ -135,7 +135,7 @@
     
 }
 
-// 监听菜单展开
+// 监听菜单关闭
 - (void)awesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu
 {
     // 替换菜单内容

@@ -21,7 +21,7 @@ static FMDatabase *_db;
 {
     // 1. 打开数据库
     NSString *filename = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"deal.sqlite"];
-    LogYellow(@"%@", filename);
+//    LogYellow(@"%@", filename);
     _db = [FMDatabase databaseWithPath:filename];
     
     // 打开失败, 直接返回
