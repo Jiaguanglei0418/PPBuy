@@ -15,6 +15,20 @@
 #import "Singleton.h"
 
 
+#define WX_AppID @"wx02cda52f9fb1636c" // scheme
+#define WX_AppSecret @"7a8170141f08b970a67d6b1b5a1fb989"
+
+#define UM_APPKEY @"562795cbe0f55a6cd7006d1a"
+
+
+#define Sina_Appkey @"1565182514" // wb1565182514
+#define Sina_Appsecret @"f1933a85d664fb8766031288bd77c606"
+
+#define Sina_Appkey_Un @"sina.562795cbe0f55a6cd7006d1a"
+
+#define QQ_AppID @"1104847859" // QQ41daa3f3 tencent1104847859
+#define QQ_Appkey @"GHuC6E9M6UiE7RQ4"
+
 
 
 #define IOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0 && [[UIDevice currentDevice].systemVersion doubleValue] < 8.0)

@@ -13,6 +13,10 @@
 #import <AlipaySDK/AlipaySDK.h>
 
 #import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+//#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialSinaHandler.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +27,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    // 设置AppKey -- UM
+    // 1. 设置UM_Appkey
     [UMSocialData setAppKey:UM_APPKEY];
+    
+    // 2. 设置微信key
+    [UMSocialWechatHandler setWXAppId:WX_AppID appSecret:WX_AppSecret url:nil];
+    
+    // 3. 设置QQkey
+    [UMSocialQQHandler setQQWithAppId:QQ_AppID appKey:QQ_Appkey url:@"http://www.umeng.com/social"];
+    
+    // 4. 设置sina
+    //打开新浪微博的SSO开关，设置新浪微博回调地址，这里必须要和你在新浪微博后台设置的回调地址一致。若在新浪后台设置我们的回调地址，“http://sns.whalecloud.com/sina2/callback”，这里可以传nil
+    //    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    // 非原生
+    [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
 
+    
+    
     // 由于苹果审核政策需求，建议大家对未安装客户端平台进行隐藏，在设置QQ、微信AppID之后调用下面的方法
-    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+//    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
     
     // UUID
 //    [UIDevice currentDevice].identifierForVendor
@@ -43,50 +61,25 @@
     return YES;
 }
 
+
+#pragma mark - 支付宝回调 微信回调
 /**
  *  当应用程序从其他应用 跳转到当前应用时, 会调用此方法
  *
  *  @param application       支付宝
  */
+#ifdef IOS7
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [UMSocialSnsService handleOpenURL:url];
+}
+
+#else
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    // scheme: - PPBuy
-    
-    
-    return YES;
+    return [UMSocialSnsService handleOpenURL:url];
 }
-
-- (void)parse:(NSURL *)url application:(UIApplication *)application
-{
-//    // 结果处理
-//    AlixPayResult *result = nil;
-//    
-//    if (url != nil && [[url host] compare:@"safepay"] == 0) {
-//        NSString *query = [[url query] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//
-//        result = [[AlixPayResult alloc] initWithString:query];
-//    }
-//    
-//    
-//    if (result.statusCode == 9000) { // 成功
-//        /**
-//          *  用公钥验证签名  严格验证请使用 result.resultString与result.signString验签
-//          */
-//        // 交易成功
-////        NSString *key = @"签约账户后获取到的支付宝公钥";
-//        id<DataVerifier> verifier = CreateRSADataVerifier(AlipayPubKey);
-//        if ([verifier verifyString:result.resultString withSign:result.signString]) {
-//            // 验证签名成功, 交易结果无篡改
-//            
-//        }else{// 交易被篡改, 失败
-//            
-//            
-//        }
-//    }else{ // 失败
-//    
-//    }
-}
-
+#endif
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

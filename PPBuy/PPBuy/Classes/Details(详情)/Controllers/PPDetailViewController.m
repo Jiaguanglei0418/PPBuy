@@ -30,7 +30,7 @@
 //#import "PartnerConfig.h"
 
 
-@interface PPDetailViewController ()<UIWebViewDelegate,DPRequestDelegate>
+@interface PPDetailViewController ()<UIWebViewDelegate,DPRequestDelegate, UMSocialUIDelegate>
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -232,15 +232,18 @@
  *  监听分享按钮
  */
 - (IBAction)shareBtnDidSelected {
-    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskLandscape];
+//    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskLandscape];
+    
     // 友盟分享
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:UM_APPKEY
-                                      shareText:self.deal.desc
-                                     shareImage:[UIImage imageNamed:@"icon_deals_empty"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToDouban, UMShareToEmail,UMShareToSms,UMShareToFacebook,UMShareToTwitter, UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQzone,UMShareToQQ ,nil]
-                                       delegate:nil];
+                                      shareText:@"test---- 测试"
+                                     shareImage:[UIImage imageNamed:@"bg_deal_purchaseButton"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToQQ, UMShareToQzone,UMShareToTencent,UMShareToRenren,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToWechatFavorite,  nil]
+                                       delegate:self];
 }
+
+
 
 #pragma mark - UM分享, 回调
 -(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
@@ -252,6 +255,7 @@
         NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
     }
 }
+
 
 
 /**

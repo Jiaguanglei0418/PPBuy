@@ -22,6 +22,7 @@
 {
     UINavigationBar *bar = [UINavigationBar appearance];
     
+    
     [bar setBackgroundImage:[UIImage resizedImageWithName:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
     
 }

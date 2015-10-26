@@ -31,6 +31,8 @@
 #import "PPCollectViewController.h"// 收藏
 #import "PPRecentViewController.h" // 记录
 
+#import "PPMapViewController.h"// map
+
 @interface PPHomeViewController ()<AwesomeMenuDelegate>
 // 分类item
 @property (nonatomic, weak) UIBarButtonItem *categoryItem;
@@ -381,7 +383,7 @@
 - (void)setupLeftNav
 {
     // 1. logo
-    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStyleDone target:nil action:nil];
     logoItem.enabled = NO;
     
     // 2. 类别
@@ -429,7 +431,7 @@
  */
 - (void)setupRightNav
 {
-    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithTarget:self action:@selector(searchMethod:) image:@"icon_map" highImage:@"icon_map_highlighted"];
+    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithTarget:self action:@selector(mapMethod:) image:@"icon_map" highImage:@"icon_map_highlighted"];
     UIBarButtonItem *searchItem = [UIBarButtonItem itemWithTarget:self action:@selector(searchMethod:) image:@"icon_search" highImage:@"icon_search_highlighted"];
     UIBarButtonItem *gapItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     gapItem.width = 50;
@@ -437,6 +439,16 @@
     self.navigationItem.rightBarButtonItems = @[mapItem, gapItem, searchItem];
 }
 
+/**
+ *  监听地图item点击
+ */
+- (void)mapMethod:(UIBarButtonItem *)item
+{
+    //
+    PPMapViewController *mapVc = [[PPMapViewController alloc] init];
+    
+    [self presentViewController:[[PPNavgationController alloc] initWithRootViewController:mapVc] animated:YES completion:nil];
+}
 
 
 /**
