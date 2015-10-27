@@ -67,4 +67,7 @@ publish_date	string	团购发布上线日期
 /**  是否正在被勾选状态 ***/
 @property (nonatomic, assign, getter=isChecking) BOOL checking;
 
+
+@property (nonatomic, strong) NSArray *businesses;
+@property (nonatomic, strong) NSArray *categories;
 @end

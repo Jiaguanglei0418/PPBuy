@@ -18,6 +18,8 @@
 		92121E991BDA162300D56637 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92121E951BDA162300D56637 /* TencentOpenAPI.framework */; };
 		92121E9A1BDA162300D56637 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92121E961BDA162300D56637 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		92121E9E1BDA164100D56637 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92121E9C1BDA164100D56637 /* libSocialSina.a */; };
+		9296EBDF1BDE3C11008ADE9E /* PPDealAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9296EBDE1BDE3C11008ADE9E /* PPDealAnnotation.m */; };
+		9296EBE21BDE3FC3008ADE9E /* PPBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 9296EBE11BDE3FC3008ADE9E /* PPBusiness.m */; };
 		929E3F751BCFBAE600233361 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F4B1BCFBAE600233361 /* MJRefreshAutoFooter.m */; };
 		929E3F761BCFBAE600233361 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F4D1BCFBAE600233361 /* MJRefreshBackFooter.m */; };
 		929E3F771BCFBAE600233361 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 929E3F4F1BCFBAE600233361 /* MJRefreshComponent.m */; };
@@ -199,6 +201,10 @@
 		92121E971BDA162300D56637 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
 		92121E9C1BDA164100D56637 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		92121E9D1BDA164100D56637 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		9296EBDD1BDE3C11008ADE9E /* PPDealAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDealAnnotation.h; sourceTree = "<group>"; };
+		9296EBDE1BDE3C11008ADE9E /* PPDealAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDealAnnotation.m; sourceTree = "<group>"; };
+		9296EBE01BDE3FC3008ADE9E /* PPBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBusiness.h; sourceTree = "<group>"; };
+		9296EBE11BDE3FC3008ADE9E /* PPBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBusiness.m; sourceTree = "<group>"; };
 		929E3F4A1BCFBAE600233361 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		929E3F4B1BCFBAE600233361 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		929E3F4C1BCFBAE600233361 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -609,8 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				92121D381BD87D9B00D56637 /* Controllers */,
-				92121D391BD87D9B00D56637 /* Models */,
-				92121D3A1BD87D9B00D56637 /* Views */,
+				92121D3A1BD87D9B00D56637 /* Models */,
 			);
 			path = "Map(地图)";
 			sourceTree = "<group>";
@@ -625,18 +630,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		92121D391BD87D9B00D56637 /* Models */ = {
+		92121D3A1BD87D9B00D56637 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9296EBDD1BDE3C11008ADE9E /* PPDealAnnotation.h */,
+				9296EBDE1BDE3C11008ADE9E /* PPDealAnnotation.m */,
+				9296EBE01BDE3FC3008ADE9E /* PPBusiness.h */,
+				9296EBE11BDE3FC3008ADE9E /* PPBusiness.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		92121D3A1BD87D9B00D56637 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		92121D9F1BD8BA0F00D56637 /* Wechat */ = {
@@ -1819,6 +1821,7 @@
 				92DD03AA1BC8B5DF0052E8A4 /* NSString+Emoji.m in Sources */,
 				929E40791BD787E200233361 /* RSADataSigner.m in Sources */,
 				92DD03C51BC8C3470052E8A4 /* PPCategory.m in Sources */,
+				9296EBE21BDE3FC3008ADE9E /* PPBusiness.m in Sources */,
 				92DD03A21BC8B5DF0052E8A4 /* PPHomeViewController.m in Sources */,
 				929E3F7C1BCFBAE600233361 /* MJRefreshAutoStateFooter.m in Sources */,
 				92C256301BCB540900D241FE /* MJDictionaryCache.m in Sources */,
@@ -1860,6 +1863,7 @@
 				929E407A1BD787E200233361 /* RSADataVerifier.m in Sources */,
 				92DD03A71BC8B5DF0052E8A4 /* AppDelegate.m in Sources */,
 				929E3FC21BD5017600233361 /* FMDatabasePool.m in Sources */,
+				9296EBDF1BDE3C11008ADE9E /* PPDealAnnotation.m in Sources */,
 				929E40721BD787E200233361 /* Order.m in Sources */,
 				92DD03AB1BC8B5DF0052E8A4 /* NSString+Extension.m in Sources */,
 				92DD04671BC8DEF00052E8A4 /* NSArray+MASAdditions.m in Sources */,

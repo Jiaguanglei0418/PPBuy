@@ -8,7 +8,16 @@
 
 #import "PPDeal.h"
 #import "MJExtension.h"
+
+#import "PPBusiness.h"
 @implementation PPDeal
+/**
+ *  数组中包含模型
+ */
++ (NSDictionary *)objectClassInArray
+{
+    return @{@"businesses" : [PPBusiness class]};
+}
 
 /**
  *  写出 模型中的属性名 和 字典中的key不相同

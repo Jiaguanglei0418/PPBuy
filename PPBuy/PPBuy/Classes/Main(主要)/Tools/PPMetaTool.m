@@ -12,7 +12,7 @@
 #import "PPCity.h"
 #import "PPCategory.h"
 #import "PPSort.h"
-
+#import "PPDeal.h"
 @implementation PPMetaTool
 static NSArray *_cities;
 
@@ -41,5 +41,16 @@ static NSArray *_sorts;
         _sorts = [PPSort objectArrayWithFilename:@"sorts.plist" error:nil];
     }
     return _sorts;
+}
+
++ (PPCategory *)categoryWithDeal:(PPDeal *)deal
+{
+    NSArray *cs = [self categories];
+    NSString *cname = [deal.categories firstObject];
+    for (PPCategory *c in cs) {
+        if ([cname isEqualToString:c.name]) return c;
+        if ([c.subcategories containsObject:cname]) return c;
+    }
+    return nil;
 }
 @end

@@ -8,7 +8,7 @@
 // 元数据 -- 管理所有的元数据(固定描述的数据)
 
 #import <Foundation/Foundation.h>
-
+@class PPCategory, PPDeal;
 @interface PPMetaTool : NSObject
 
 /**
@@ -23,6 +23,8 @@
  *
  */
 + (NSArray *)categories;
++ (PPCategory *)categoryWithDeal:(PPDeal *)deal;
+
 
 
 /**
@@ -30,4 +32,7 @@
  *
  */
 + (NSArray *)sorts;
+
+
+
 @end

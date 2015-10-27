@@ -444,7 +444,7 @@
  */
 - (void)mapMethod:(UIBarButtonItem *)item
 {
-    //
+    // 跳转到地图
     PPMapViewController *mapVc = [[PPMapViewController alloc] init];
     
     [self presentViewController:[[PPNavgationController alloc] initWithRootViewController:mapVc] animated:YES completion:nil];
